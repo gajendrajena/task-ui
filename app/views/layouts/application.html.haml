@@ -1,0 +1,25 @@
+!!!
+%html.js.inlinesvg
+  %head
+    %title UI Task 
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    / %meta{content: "width=(device-width,)initial-scale=1", name: "viewport"}/
+    = csrf_meta_tags
+    = javascript_include_tag "html5","application", "data-turbolinks-track" => true
+  %body{"data-action" => "show", "data-controller" => "projects", style: ""}
+    = yield
+
+  :javascript
+    $(document).ready(function() {
+      CF.init();
+      if (CF.util.namespace_exists('CF.views.projects')) { CF.views.projects.init(); }
+    });
+  :javascript
+    var imageBoard = new DrawingBoard.Board('title-board', { size: 30, controls: [{ Size: { type: 'dropdown' } },'Navigation','Download','DrawingMode'], background: '/graphics/original/missing.png', color: '#ff0', webStorage: 'local' });
+  :javascript
+    arrange_size()
+  %script#IntercomSettingsScriptTag
+    :cdata
+      window.intercomSettings = {"email":"mailme@hsps.in","user_id":"5251a2bda363b8f78c000004","user_hash":"9b6a605a3488e63c4c172ab28299ead6fd5b34c6824612fe276d2126a0a0c380","app_id":"dcfec0193a8d1c8e541d78855cfb6107a9d7edc7"};
+  :javascript
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()

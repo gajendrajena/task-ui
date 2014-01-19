@@ -1,0 +1,849 @@
+
+.navbar
+  .navbar-inner
+    .container
+      %button.navbar-toggle{"data-target" => ".sidebar-nav.nav-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: "http://example.com:3000/"}
+        %span
+          %img{src: "/assets/cblogo.png"}/
+      / start: Header Menu
+      .nav-no-collapse.header-nav
+        %ul.nav.pull-right
+          %li.dropdown.hidden-xs
+            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+              %i.halflings-icon.white.bullhorn
+            .dropdown-menu{style: "padding: 15px; padding-bottom: 0px;"}
+              %form{"accept-charset" => "UTF-8", action: "http://example.com:3000/pages/contact/send", method: "post"}
+                %div{style: "margin:0;padding:0;display:inline"}
+                  %input{name: "utf8", type: "hidden", value: "✓"}/
+                  %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                %input#subject{name: "contact[subject]", placeholder: "subject", style: "margin-bottom: 15px;", type: "text"}/
+                %input#contact_email{name: "contact[email]", type: "hidden", value: "mailme@hsps.in"}/
+                %input#contact_sender{name: "contact[sender]", type: "hidden", value: "Harisankar P S"}/
+                %textarea#feedback{cols: "19", name: "contact[message]", placeholder: "feedback", row: "20", style: "margin-bottom: 20px;height:150px", type: "textarea"}
+                %input.btn.btn-info{type: "submit", value: "submit"}/
+          %li.dropdown.hidden-xs
+            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+              %i.halflings-icon.white.warning-sign
+            %ul.dropdown-menu.notifications
+              %li
+                %a{href: "http://example.com:3000/notifications"}
+                  SEE ALL NOTIFICATIONS
+                  %span.icon16.icomoon-icon-arrow-right-8
+          / start: Message Dropdown
+          %li.dropdown.hidden-xs
+            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+              %i.halflings-icon.white.envelope
+            %ul.dropdown-menu.messages
+              %li
+                %a.dropdown-menu-sub-footer{href: "http://example.com:3000/messages"} View all messages
+          / end: Message Dropdown
+          %li
+            %a{href: "http://example.com:3000/profiles/5251a2bca363b8f78c000003/edit"}
+              %i.halflings-icon.white.wrench
+          / start: User Dropdown
+          %li.dropdown
+            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+              Harisankar P S
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a.header-icon-links{href: "http://example.com:3000/coderhs/dashboard", title: "Harisankar P S's dashboard"}
+                  %img{alt: "coderhs", height: "32", src: "/assets/producer.png", width: "32"}>/
+                  Harisankar P S
+              %li
+                %a.header-icon-links{href: "http://example.com:3000/users/edit"} Change Password
+              %li
+                %a.header-icon-links{"data-method" => "delete", href: "http://example.com:3000/users/sign_out", rel: "nofollow"}
+                  %i.halflings-icon.white.off>
+                  Logout
+          / end: User Dropdown
+      / end: Header Menu
+/ start: Header
+#taskDetail.modal.fade
+.container
+  .row
+  #content.col-sm-12{style: "min-height: auto;"}
+    .nav-wrapper
+      %a#invite-team{"data-content" => "<div class='search-invite-content'><div class='search-input-wrapper'><form action='/searches/new' class='search-team-member form-horizontal' remote='true'><input type='hidden' value='52614c72a363b8a7cc000005' name='project'/> <div class='controls'><input type='text' id='search-input' class='form-control' name='search[name]'/><p class='search-desc'>Search for a person in contentforest to invite someone new.</p></div></form></div><div class='search-results-wrapper'</div>", "data-original-title" => "Add Members <a href='#' class='popover-close'><i class='icon-remove'></i></a>", "data-toggle" => "popover", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+        %i.icon-group>
+        Invite Team
+    .col-lg-2.project-status-wrapper
+      %h4 All done?
+      %form#edit_project_52614c72a363b8a7cc000005.edit_project{"accept-charset" => "UTF-8", action: "./task_ui_files/task_ui.html", method: "post"}
+        %div{style: "margin:0;padding:0;display:inline"}
+          %input{name: "utf8", type: "hidden", value: "✓"}/
+          %input{name: "_method", type: "hidden", value: "put"}/
+          %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+        %input#project_status{name: "project[status]", type: "hidden", value: "complete"}/
+        %input.btn.btn-success.btn-block{name: "commit", type: "submit", value: "Mark project as complete"}/
+    .box
+      #project_title.box-header
+        %h2 Hello World What you Doing (click to know more)
+      .box-content
+        #project_description.div{style: "display: none;"}
+          .row
+            .col-lg-8
+              .span7
+                %h4 Description
+                %p.text-justified
+                %p
+                %p Hello Wordl!! 
+                %p
+                %p
+                %br/
+        .row
+          .col-lg-10
+            %ul.nav.nav-tabs
+              %li.active
+                %a.tab-link{"data-toggle" => "tab", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#tasks-wrapper"} Tasks
+              %li
+                %a.tab-link{"data-toggle" => "tab", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#videos-wrapper"} Workspace
+              %li
+                %a.tab-link{"data-toggle" => "tab", href: "http://example.com:3000/project/52614c72a363b8a7cc000005#comments-wrapper"} Chat
+            #pitches-activities-content.tab-content
+              #pitch-wrapper.hide Kindly raise interest in the job before you submit a pitch
+              #comments-wrapper.tab-pane
+                .row
+                  .col-lg-12
+                    %h4 23 comments
+                    %ul.chat
+                      %li
+                        %ul#chat-message-list.chat
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p testing 123
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p trisl
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p trisl
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p testing
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p wqw
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p 2qw
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p 2qw
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p 2qw
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was here
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p testing
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p was here
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p testing 123
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p trial
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p testing 123
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p trial
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p lets chat
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p Awesome bro
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 18 days ago
+                              %span.text{style: "width:650px"}
+                                %p so am herer
+                          .row
+                          %li.left
+                            %img.avatar{alt: "Producer", height: "50", src: "/assets/producer.png", width: "50"}/
+                            %span.message
+                              %span.arrow
+                              %span.from Harisankar P S
+                              %span.time 16 days ago
+                              %span.text{style: "width:650px"}
+                                %p
+                                  was
+                      %li.sendMsg
+                        %form#new_comment.form-horizontal.row-fluid{"accept-charset" => "UTF-8", action: "http://example.com:3000/project/52614c72a363b8a7cc000005/comments", "data-remote" => "true", method: "post"}
+                          %div{style: "margin:0;padding:0;display:inline"}
+                            %input{name: "utf8", type: "hidden", value: "✓"}/
+                            %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                          .form-group
+                            .controls
+                              %textarea#comment_body.elastic{cols: "40", name: "comment[body]", placeholder: "Comment here", rows: "2", style: "width:94%"}
+                          .form-actions
+                            %input.btn.btn-info.marginT10{name: "commit", type: "submit", value: "Submit"}/
+              #tasks-wrapper.tab-pane.active
+                .row
+                  %ul#task_btn.nav.right
+                    %li
+                      %a#save-task-btn{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} Save tasks
+                #save_task.row{style: "display:none"}
+                  .span10
+                    .box{style: "margin-left:20px"}
+                      .box-header
+                        %h2 Save task template
+                      .box-content
+                        %form{"accept-charset" => "UTF-8", action: "http://example.com:3000/project/52614c72a363b8a7cc000005/task_templates", html: "{:multipart=>true}", method: "post"}
+                          %div{style: "margin:0;padding:0;display:inline"}
+                            %input{name: "utf8", type: "hidden", value: "✓"}/
+                            %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                          %fieldset.col-sm-12
+                            .form-group
+                              .control
+                                %input.form-control{name: "title", placeholder: "Title of task template", required: "true", size: "16", type: "text"}/
+                            .form-action
+                              %a#remove-save-task-template.btn.btn-danger{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}> Cancel
+                               
+                              %input.btn.btn-info{name: "commit", type: "submit", value: "Save"}/
+                #task_list.row{style: "margin-left:20px"}
+                  #task_content.row{style: "width: 1520px"}
+                    .task-col-boxes
+                      .box
+                        .box-header
+                          %h2.taskListHead
+                            %i.halflings-icon.check>
+                            testing
+                          %a{"data-confirm" => "Are you sure?", "data-method" => "delete", href: "http://example.com:3000/task_lists/5273ed1ca363b88d7d000038/archive", rel: "nofollow"}
+                            %i.icon-trash.right
+                          %input#5273ed1ca363b88d7d000038.taskListInput{style: "display: none;", value: "testing"}/
+                        .box-content.task-wrapper
+                          .tasks.dd{"data-task-list-id" => "5273ed1ca363b88d7d000038"}
+                            %ol.dd-list
+                              %li.dd-item{"data-id" => "0"}
+                              %li.dd-item.taskCursor{"data-task-id" => "527815bfa363b82605000026", "data-task-list-id" => "5273ed1ca363b88d7d000038"}
+                                .dd-handle.span4 testing
+                              %li.dd-item.taskCursor{"data-task-id" => "52847b58a363b8b88800000d", "data-task-list-id" => "5273ed1ca363b88d7d000038"}
+                                .dd-handle.span4 Task 2
+                          .add-new-task-wrapper
+                            %a{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} Add new task
+                          .new-task-form-wrapper.hidden
+                            %form#new_task.new_task{"accept-charset" => "UTF-8", action: "http://example.com:3000/tasks", method: "post"}
+                              %div{style: "margin:0;padding:0;display:inline"}
+                                %input{name: "utf8", type: "hidden", value: "✓"}/
+                                %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                              %input#task_task_list{name: "task[task_list]", type: "hidden", value: "5273ed1ca363b88d7d000038"}/
+                              %textarea#task_title.task-title{cols: "40", name: "task[title]", rows: "20"}
+                              .controls.form-action
+                                %button.btn.btn-primary.btn-add-task{name: "button", type: "submit"} Add
+                                %a.btn-cancel-create-task{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+                                  %i.glyphicons-icon.remove_2
+                    .task-col-boxes
+                      .box.create-list.idle
+                        %form#new_task_list.form-horizontal{"accept-charset" => "UTF-8", action: "http://example.com:3000/task_lists", method: "post"}
+                          %div{style: "margin:0;padding:0;display:inline"}
+                            %input{name: "utf8", type: "hidden", value: "✓"}/
+                            %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                          %input#project_id{name: "project_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                          .form-group
+                            .controls.col-sm-12
+                              %span#new-list Create new Task List
+                              %input#task_list_title.hidden.form-control{name: "task_list[title]", placeholder: "Task List", size: "30", type: "text"}/
+                          .form-group
+                            .controls.form-action
+                              %button#btn-create-list.hidden.btn.btn-primary{name: "button", type: "submit"} Save
+                              %a#btn-cancel-create-list.hidden{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}
+                                %i.glyphicons-icon.remove_2
+                  .row
+                    #task_btn.col-lg-4.hide
+                      %input#create_task_btn.btn.btn-info{name: "commit", type: "submit", value: "Create Task"}/
+                      %input#create_category_btn.btn.btn-info{name: "commit", type: "submit", value: "Create Task Group"}/
+                    #create_task.col-lg-8{style: "display: none;"}
+                      .box
+                        .box-header
+                          %h2 Create Task
+                        .box-content
+                          %form#new_task.new_task{"accept-charset" => "UTF-8", action: "http://example.com:3000/tasks", method: "post"}
+                            %div{style: "margin:0;padding:0;display:inline"}
+                              %input{name: "utf8", type: "hidden", value: "✓"}/
+                              %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                            %fieldset.col-sm-12
+                              .form-group
+                                %label.control-label Title
+                                .control
+                                  .input-prepend.input-group
+                                    %span.input-group-addon Title
+                                    %input.form-control{name: "task[title]", size: "16", type: "text"}/
+                              .form-group
+                                %label.control-label Description
+                                .control
+                                  %textarea#task_description.ckeditor{cols: "40", name: "task[description]", rows: "20", style: "visibility: hidden; display: none;"}
+                                  #cke_task_description.cke_1.cke.cke_reset.cke_chrome.cke_editor_task_description.cke_ltr.cke_browser_webkit{"aria-labelledby" => "cke_task_description_arialbl", dir: "ltr", lang: "en", role: "application"}
+                                    %span#cke_task_description_arialbl.cke_voice_label Rich Text Editor, task_description
+                                    .cke_inner.cke_reset{role: "presentation"}
+                                      %span#cke_1_top.cke_top.cke_reset_all{role: "presentation", style: "height: auto; -webkit-user-select: none;"}
+                                        %span#cke_5.cke_voice_label Editor toolbars
+                                        %span#cke_1_toolbox.cke_toolbox{"aria-labelledby" => "cke_5", onmousedown: "return false;", role: "group"}
+                                          %span#cke_8.cke_toolbar{"aria-labelledby" => "cke_8_label", role: "toolbar"}
+                                            %span#cke_8_label.cke_voice_label Clipboard/Undo
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_9.cke_button.cke_button__cut.cke_button_disabled{"aria-haspopup" => "false", "aria-labelledby" => "cke_9_label", hidefocus: "true", href: "javascript:void('Cut')", onclick: "CKEDITOR.tools.callFunction(5,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(3,event);", onkeydown: "return CKEDITOR.tools.callFunction(2,event);", onmousedown: "return CKEDITOR.tools.callFunction(4,event);", role: "button", tabindex: "-1", title: "Cut"}
+                                                %span.cke_button_icon.cke_button__cut_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -264px;background-size:auto;"}  
+                                                %span#cke_9_label.cke_button_label.cke_button__cut_label{"aria-hidden" => "false"} Cut
+                                              %a#cke_10.cke_button.cke_button__copy.cke_button_disabled{"aria-haspopup" => "false", "aria-labelledby" => "cke_10_label", hidefocus: "true", href: "javascript:void('Copy')", onclick: "CKEDITOR.tools.callFunction(9,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(7,event);", onkeydown: "return CKEDITOR.tools.callFunction(6,event);", onmousedown: "return CKEDITOR.tools.callFunction(8,event);", role: "button", tabindex: "-1", title: "Copy"}
+                                                %span.cke_button_icon.cke_button__copy_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -216px;background-size:auto;"}  
+                                                %span#cke_10_label.cke_button_label.cke_button__copy_label{"aria-hidden" => "false"} Copy
+                                              %a#cke_11.cke_button.cke_button__paste.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_11_label", hidefocus: "true", href: "javascript:void('Paste')", onclick: "CKEDITOR.tools.callFunction(13,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(11,event);", onkeydown: "return CKEDITOR.tools.callFunction(10,event);", onmousedown: "return CKEDITOR.tools.callFunction(12,event);", role: "button", tabindex: "-1", title: "Paste"}
+                                                %span.cke_button_icon.cke_button__paste_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -312px;background-size:auto;"}  
+                                                %span#cke_11_label.cke_button_label.cke_button__paste_label{"aria-hidden" => "false"} Paste
+                                              %a#cke_12.cke_button.cke_button__pastetext.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_12_label", hidefocus: "true", href: "javascript:void('Paste as plain text')", onclick: "CKEDITOR.tools.callFunction(17,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(15,event);", onkeydown: "return CKEDITOR.tools.callFunction(14,event);", onmousedown: "return CKEDITOR.tools.callFunction(16,event);", role: "button", tabindex: "-1", title: "Paste as plain text"}
+                                                %span.cke_button_icon.cke_button__pastetext_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -720px;background-size:auto;"}  
+                                                %span#cke_12_label.cke_button_label.cke_button__pastetext_label{"aria-hidden" => "false"} Paste as plain text
+                                              %a#cke_13.cke_button.cke_button__pastefromword.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_13_label", hidefocus: "true", href: "javascript:void('Paste from Word')", onclick: "CKEDITOR.tools.callFunction(21,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(19,event);", onkeydown: "return CKEDITOR.tools.callFunction(18,event);", onmousedown: "return CKEDITOR.tools.callFunction(20,event);", role: "button", tabindex: "-1", title: "Paste from Word"}
+                                                %span.cke_button_icon.cke_button__pastefromword_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -768px;background-size:auto;"}  
+                                                %span#cke_13_label.cke_button_label.cke_button__pastefromword_label{"aria-hidden" => "false"} Paste from Word
+                                              %span.cke_toolbar_separator{role: "separator"}
+                                              %a#cke_14.cke_button.cke_button__undo.cke_button_disabled{"aria-disabled" => "true", "aria-haspopup" => "false", "aria-labelledby" => "cke_14_label", hidefocus: "true", href: "javascript:void('Undo')", onclick: "CKEDITOR.tools.callFunction(25,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(23,event);", onkeydown: "return CKEDITOR.tools.callFunction(22,event);", onmousedown: "return CKEDITOR.tools.callFunction(24,event);", role: "button", tabindex: "-1", title: "Undo"}
+                                                %span.cke_button_icon.cke_button__undo_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -1008px;background-size:auto;"}  
+                                                %span#cke_14_label.cke_button_label.cke_button__undo_label{"aria-hidden" => "false"} Undo
+                                              %a#cke_15.cke_button.cke_button__redo.cke_button_disabled{"aria-disabled" => "true", "aria-haspopup" => "false", "aria-labelledby" => "cke_15_label", hidefocus: "true", href: "javascript:void('Redo')", onclick: "CKEDITOR.tools.callFunction(29,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(27,event);", onkeydown: "return CKEDITOR.tools.callFunction(26,event);", onmousedown: "return CKEDITOR.tools.callFunction(28,event);", role: "button", tabindex: "-1", title: "Redo"}
+                                                %span.cke_button_icon.cke_button__redo_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -960px;background-size:auto;"}  
+                                                %span#cke_15_label.cke_button_label.cke_button__redo_label{"aria-hidden" => "false"} Redo
+                                            %span.cke_toolbar_end
+                                          %span#cke_16.cke_toolbar{"aria-labelledby" => "cke_16_label", role: "toolbar"}
+                                            %span#cke_16_label.cke_voice_label Editing
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_17.cke_button.cke_button__scayt.cke_button_off{"aria-haspopup" => "true", "aria-labelledby" => "cke_17_label", hidefocus: "true", href: "javascript:void('Spell Check As You Type')", onclick: "CKEDITOR.tools.callFunction(33,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(31,event);", onkeydown: "return CKEDITOR.tools.callFunction(30,event);", onmousedown: "return CKEDITOR.tools.callFunction(32,event);", role: "button", tabindex: "-1", title: "Spell Check As You Type"}
+                                                %span.cke_button_icon.cke_button__scayt_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -888px;background-size:auto;"}  
+                                                %span#cke_17_label.cke_button_label.cke_button__scayt_label{"aria-hidden" => "false"} Spell Check As You Type
+                                                %span.cke_button_arrow
+                                            %span.cke_toolbar_end
+                                          %span#cke_18.cke_toolbar{"aria-labelledby" => "cke_18_label", role: "toolbar"}
+                                            %span#cke_18_label.cke_voice_label Links
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_19.cke_button.cke_button__link.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_19_label", hidefocus: "true", href: "javascript:void('Link')", onclick: "CKEDITOR.tools.callFunction(37,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(35,event);", onkeydown: "return CKEDITOR.tools.callFunction(34,event);", onmousedown: "return CKEDITOR.tools.callFunction(36,event);", role: "button", tabindex: "-1", title: "Link"}
+                                                %span.cke_button_icon.cke_button__link_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -528px;background-size:auto;"}  
+                                                %span#cke_19_label.cke_button_label.cke_button__link_label{"aria-hidden" => "false"} Link
+                                              %a#cke_20.cke_button.cke_button__unlink.cke_button_disabled{"aria-disabled" => "true", "aria-haspopup" => "false", "aria-labelledby" => "cke_20_label", hidefocus: "true", href: "javascript:void('Unlink')", onclick: "CKEDITOR.tools.callFunction(41,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(39,event);", onkeydown: "return CKEDITOR.tools.callFunction(38,event);", onmousedown: "return CKEDITOR.tools.callFunction(40,event);", role: "button", tabindex: "-1", title: "Unlink"}
+                                                %span.cke_button_icon.cke_button__unlink_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -552px;background-size:auto;"}  
+                                                %span#cke_20_label.cke_button_label.cke_button__unlink_label{"aria-hidden" => "false"} Unlink
+                                              %a#cke_21.cke_button.cke_button__anchor.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_21_label", hidefocus: "true", href: "javascript:void('Anchor')", onclick: "CKEDITOR.tools.callFunction(45,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(43,event);", onkeydown: "return CKEDITOR.tools.callFunction(42,event);", onmousedown: "return CKEDITOR.tools.callFunction(44,event);", role: "button", tabindex: "-1", title: "Anchor"}
+                                                %span.cke_button_icon.cke_button__anchor_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -504px;background-size:auto;"}  
+                                                %span#cke_21_label.cke_button_label.cke_button__anchor_label{"aria-hidden" => "false"} Anchor
+                                            %span.cke_toolbar_end
+                                          %span#cke_22.cke_toolbar{"aria-labelledby" => "cke_22_label", role: "toolbar"}
+                                            %span#cke_22_label.cke_voice_label Insert
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_23.cke_button.cke_button__image.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_23_label", hidefocus: "true", href: "javascript:void('Image')", onclick: "CKEDITOR.tools.callFunction(49,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(47,event);", onkeydown: "return CKEDITOR.tools.callFunction(46,event);", onmousedown: "return CKEDITOR.tools.callFunction(48,event);", role: "button", tabindex: "-1", title: "Image"}
+                                                %span.cke_button_icon.cke_button__image_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -360px;background-size:auto;"}  
+                                                %span#cke_23_label.cke_button_label.cke_button__image_label{"aria-hidden" => "false"} Image
+                                              %a#cke_24.cke_button.cke_button__table.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_24_label", hidefocus: "true", href: "javascript:void('Table')", onclick: "CKEDITOR.tools.callFunction(53,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(51,event);", onkeydown: "return CKEDITOR.tools.callFunction(50,event);", onmousedown: "return CKEDITOR.tools.callFunction(52,event);", role: "button", tabindex: "-1", title: "Table"}
+                                                %span.cke_button_icon.cke_button__table_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -912px;background-size:auto;"}  
+                                                %span#cke_24_label.cke_button_label.cke_button__table_label{"aria-hidden" => "false"} Table
+                                              %a#cke_25.cke_button.cke_button__horizontalrule.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_25_label", hidefocus: "true", href: "javascript:void('Insert Horizontal Line')", onclick: "CKEDITOR.tools.callFunction(57,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(55,event);", onkeydown: "return CKEDITOR.tools.callFunction(54,event);", onmousedown: "return CKEDITOR.tools.callFunction(56,event);", role: "button", tabindex: "-1", title: "Insert Horizontal Line"}
+                                                %span.cke_button_icon.cke_button__horizontalrule_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -336px;background-size:auto;"}  
+                                                %span#cke_25_label.cke_button_label.cke_button__horizontalrule_label{"aria-hidden" => "false"} Insert Horizontal Line
+                                              %a#cke_26.cke_button.cke_button__specialchar.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_26_label", hidefocus: "true", href: "javascript:void('Insert Special Character')", onclick: "CKEDITOR.tools.callFunction(61,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(59,event);", onkeydown: "return CKEDITOR.tools.callFunction(58,event);", onmousedown: "return CKEDITOR.tools.callFunction(60,event);", role: "button", tabindex: "-1", title: "Insert Special Character"}
+                                                %span.cke_button_icon.cke_button__specialchar_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -864px;background-size:auto;"}  
+                                                %span#cke_26_label.cke_button_label.cke_button__specialchar_label{"aria-hidden" => "false"} Insert Special Character
+                                            %span.cke_toolbar_end
+                                          %span#cke_27.cke_toolbar{"aria-labelledby" => "cke_27_label", role: "toolbar"}
+                                            %span#cke_27_label.cke_voice_label Tools
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_28.cke_button.cke_button__maximize.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_28_label", hidefocus: "true", href: "javascript:void('Maximize')", onclick: "CKEDITOR.tools.callFunction(65,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(63,event);", onkeydown: "return CKEDITOR.tools.callFunction(62,event);", onmousedown: "return CKEDITOR.tools.callFunction(64,event);", role: "button", tabindex: "-1", title: "Maximize"}
+                                                %span.cke_button_icon.cke_button__maximize_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -672px;background-size:auto;"}  
+                                                %span#cke_28_label.cke_button_label.cke_button__maximize_label{"aria-hidden" => "false"} Maximize
+                                            %span.cke_toolbar_end
+                                          %span#cke_29.cke_toolbar{"aria-labelledby" => "cke_29_label", role: "toolbar"}
+                                            %span#cke_29_label.cke_voice_label Document
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_30.cke_button.cke_button__source.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_30_label", hidefocus: "true", href: "javascript:void('Source')", onclick: "CKEDITOR.tools.callFunction(69,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(67,event);", onkeydown: "return CKEDITOR.tools.callFunction(66,event);", onmousedown: "return CKEDITOR.tools.callFunction(68,event);", role: "button", tabindex: "-1", title: "Source"}
+                                                %span.cke_button_icon.cke_button__source_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -840px;background-size:auto;"}  
+                                                %span#cke_30_label.cke_button_label.cke_button__source_label{"aria-hidden" => "false"} Source
+                                            %span.cke_toolbar_end
+                                          %span.cke_toolbar_break
+                                          %span#cke_31.cke_toolbar{"aria-labelledby" => "cke_31_label", role: "toolbar"}
+                                            %span#cke_31_label.cke_voice_label Basic Styles
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_32.cke_button.cke_button__bold.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_32_label", hidefocus: "true", href: "javascript:void('Bold')", onclick: "CKEDITOR.tools.callFunction(73,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(71,event);", onkeydown: "return CKEDITOR.tools.callFunction(70,event);", onmousedown: "return CKEDITOR.tools.callFunction(72,event);", role: "button", tabindex: "-1", title: "Bold"}
+                                                %span.cke_button_icon.cke_button__bold_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -24px;background-size:auto;"}  
+                                                %span#cke_32_label.cke_button_label.cke_button__bold_label{"aria-hidden" => "false"} Bold
+                                              %a#cke_33.cke_button.cke_button__italic.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_33_label", hidefocus: "true", href: "javascript:void('Italic')", onclick: "CKEDITOR.tools.callFunction(77,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(75,event);", onkeydown: "return CKEDITOR.tools.callFunction(74,event);", onmousedown: "return CKEDITOR.tools.callFunction(76,event);", role: "button", tabindex: "-1", title: "Italic"}
+                                                %span.cke_button_icon.cke_button__italic_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -48px;background-size:auto;"}  
+                                                %span#cke_33_label.cke_button_label.cke_button__italic_label{"aria-hidden" => "false"} Italic
+                                              %a#cke_34.cke_button.cke_button__strike.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_34_label", hidefocus: "true", href: "javascript:void('Strike Through')", onclick: "CKEDITOR.tools.callFunction(81,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(79,event);", onkeydown: "return CKEDITOR.tools.callFunction(78,event);", onmousedown: "return CKEDITOR.tools.callFunction(80,event);", role: "button", tabindex: "-1", title: "Strike Through"}
+                                                %span.cke_button_icon.cke_button__strike_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -72px;background-size:auto;"}  
+                                                %span#cke_34_label.cke_button_label.cke_button__strike_label{"aria-hidden" => "false"} Strike Through
+                                              %span.cke_toolbar_separator{role: "separator"}
+                                              %a#cke_35.cke_button.cke_button__removeformat.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_35_label", hidefocus: "true", href: "javascript:void('Remove Format')", onclick: "CKEDITOR.tools.callFunction(85,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(83,event);", onkeydown: "return CKEDITOR.tools.callFunction(82,event);", onmousedown: "return CKEDITOR.tools.callFunction(84,event);", role: "button", tabindex: "-1", title: "Remove Format"}
+                                                %span.cke_button_icon.cke_button__removeformat_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -792px;background-size:auto;"}  
+                                                %span#cke_35_label.cke_button_label.cke_button__removeformat_label{"aria-hidden" => "false"} Remove Format
+                                            %span.cke_toolbar_end
+                                          %span#cke_36.cke_toolbar{"aria-labelledby" => "cke_36_label", role: "toolbar"}
+                                            %span#cke_36_label.cke_voice_label Paragraph
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_37.cke_button.cke_button__numberedlist.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_37_label", hidefocus: "true", href: "javascript:void('Insert/Remove Numbered List')", onclick: "CKEDITOR.tools.callFunction(89,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(87,event);", onkeydown: "return CKEDITOR.tools.callFunction(86,event);", onmousedown: "return CKEDITOR.tools.callFunction(88,event);", role: "button", tabindex: "-1", title: "Insert/Remove Numbered List"}
+                                                %span.cke_button_icon.cke_button__numberedlist_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -648px;background-size:auto;"}  
+                                                %span#cke_37_label.cke_button_label.cke_button__numberedlist_label{"aria-hidden" => "false"} Insert/Remove Numbered List
+                                              %a#cke_38.cke_button.cke_button__bulletedlist.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_38_label", hidefocus: "true", href: "javascript:void('Insert/Remove Bulleted List')", onclick: "CKEDITOR.tools.callFunction(93,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(91,event);", onkeydown: "return CKEDITOR.tools.callFunction(90,event);", onmousedown: "return CKEDITOR.tools.callFunction(92,event);", role: "button", tabindex: "-1", title: "Insert/Remove Bulleted List"}
+                                                %span.cke_button_icon.cke_button__bulletedlist_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -600px;background-size:auto;"}  
+                                                %span#cke_38_label.cke_button_label.cke_button__bulletedlist_label{"aria-hidden" => "false"} Insert/Remove Bulleted List
+                                              %span.cke_toolbar_separator{role: "separator"}
+                                              %a#cke_39.cke_button.cke_button__outdent.cke_button_disabled{"aria-disabled" => "true", "aria-haspopup" => "false", "aria-labelledby" => "cke_39_label", hidefocus: "true", href: "javascript:void('Decrease Indent')", onclick: "CKEDITOR.tools.callFunction(97,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(95,event);", onkeydown: "return CKEDITOR.tools.callFunction(94,event);", onmousedown: "return CKEDITOR.tools.callFunction(96,event);", role: "button", tabindex: "-1", title: "Decrease Indent"}
+                                                %span.cke_button_icon.cke_button__outdent_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -456px;background-size:auto;"}  
+                                                %span#cke_39_label.cke_button_label.cke_button__outdent_label{"aria-hidden" => "false"} Decrease Indent
+                                              %a#cke_40.cke_button.cke_button__indent.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_40_label", hidefocus: "true", href: "javascript:void('Increase Indent')", onclick: "CKEDITOR.tools.callFunction(101,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(99,event);", onkeydown: "return CKEDITOR.tools.callFunction(98,event);", onmousedown: "return CKEDITOR.tools.callFunction(100,event);", role: "button", tabindex: "-1", title: "Increase Indent"}
+                                                %span.cke_button_icon.cke_button__indent_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -408px;background-size:auto;"}  
+                                                %span#cke_40_label.cke_button_label.cke_button__indent_label{"aria-hidden" => "false"} Increase Indent
+                                              %span.cke_toolbar_separator{role: "separator"}
+                                              %a#cke_41.cke_button.cke_button__blockquote.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_41_label", hidefocus: "true", href: "javascript:void('Block Quote')", onclick: "CKEDITOR.tools.callFunction(105,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(103,event);", onkeydown: "return CKEDITOR.tools.callFunction(102,event);", onmousedown: "return CKEDITOR.tools.callFunction(104,event);", role: "button", tabindex: "-1", title: "Block Quote"}
+                                                %span.cke_button_icon.cke_button__blockquote_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 -168px;background-size:auto;"}  
+                                                %span#cke_41_label.cke_button_label.cke_button__blockquote_label{"aria-hidden" => "false"} Block Quote
+                                            %span.cke_toolbar_end
+                                          %span#cke_42.cke_toolbar{"aria-labelledby" => "cke_42_label", role: "toolbar"}
+                                            %span#cke_42_label.cke_voice_label Styles
+                                            %span.cke_toolbar_start
+                                            %span#cke_6.cke_combo.cke_combo__styles.cke_combo_off{role: "presentation"}
+                                              %span#cke_6_label.cke_combo_label Styles
+                                              %a.cke_combo_button{"aria-haspopup" => "true", "aria-labelledby" => "cke_6_label", hidefocus: "true", href: "javascript:void('Formatting Styles')", onclick: "CKEDITOR.tools.callFunction(106,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(108,event);", onkeydown: "return CKEDITOR.tools.callFunction(107,event,this);", onmousedown: "return CKEDITOR.tools.callFunction(109,event);", role: "button", tabindex: "-1", title: "Formatting Styles"}
+                                                %span#cke_6_text.cke_combo_text.cke_combo_inlinelabel Styles
+                                                %span.cke_combo_open
+                                                  %span.cke_combo_arrow
+                                            %span#cke_7.cke_combo.cke_combo__format.cke_combo_off{role: "presentation"}
+                                              %span#cke_7_label.cke_combo_label Format
+                                              %a.cke_combo_button{"aria-haspopup" => "true", "aria-labelledby" => "cke_7_label", hidefocus: "true", href: "javascript:void('Paragraph Format')", onclick: "CKEDITOR.tools.callFunction(110,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(112,event);", onkeydown: "return CKEDITOR.tools.callFunction(111,event,this);", onmousedown: "return CKEDITOR.tools.callFunction(113,event);", role: "button", tabindex: "-1", title: "Paragraph Format"}
+                                                %span#cke_7_text.cke_combo_text.cke_combo_inlinelabel Format
+                                                %span.cke_combo_open
+                                                  %span.cke_combo_arrow
+                                            %span.cke_toolbar_end
+                                          %span#cke_43.cke_toolbar{"aria-labelledby" => "cke_43_label", role: "toolbar"}
+                                            %span#cke_43_label.cke_voice_label about
+                                            %span.cke_toolbar_start
+                                            %span.cke_toolgroup{role: "presentation"}
+                                              %a#cke_44.cke_button.cke_button__about.cke_button_off{"aria-haspopup" => "false", "aria-labelledby" => "cke_44_label", hidefocus: "true", href: "javascript:void('About CKEditor')", onclick: "CKEDITOR.tools.callFunction(117,this);return false;", onfocus: "return CKEDITOR.tools.callFunction(115,event);", onkeydown: "return CKEDITOR.tools.callFunction(114,event);", onmousedown: "return CKEDITOR.tools.callFunction(116,event);", role: "button", tabindex: "-1", title: "About CKEditor"}
+                                                %span.cke_button_icon.cke_button__about_icon{style: "background-image:url(http://example.com:3000/acme/js/plugins/icons.png?t=D9EF);background-position:0 0px;background-size:auto;"}  
+                                                %span#cke_44_label.cke_button_label.cke_button__about_label{"aria-hidden" => "false"} About CKEditor
+                                            %span.cke_toolbar_end
+                                      #cke_1_contents.cke_contents.cke_reset{role: "presentation", style: "height: 200px;"}
+                                        %span#cke_50.cke_voice_label Press ALT 0 for help
+                                        %iframe.cke_wysiwyg_frame.cke_reset{allowtransparency: "true", "aria-describedby" => "cke_50", frameborder: "0", src: "", style: "width: 0px; height: 100%;", tabindex: "0", title: "Rich Text Editor, task_description"}
+                                      %span#cke_1_bottom.cke_bottom.cke_reset_all{role: "presentation", style: "-webkit-user-select: none;"}
+                                        %span#cke_1_resizer.cke_resizer.cke_resizer_vertical.cke_resizer_ltr{onmousedown: "CKEDITOR.tools.callFunction(0, event)", title: "Resize"} ◢
+                                        %span#cke_1_path_label.cke_voice_label Elements path
+                                        %span#cke_1_path.cke_path{"aria-labelledby" => "cke_1_path_label", role: "group"}
+                                          %a#cke_elementspath_45_1.cke_path_item{"aria-label" => "body element", hidefocus: "true", href: "javascript:void('body')", onclick: "CKEDITOR.tools.callFunction(118,1); return false;", onkeydown: "return CKEDITOR.tools.callFunction(119,1, event );", role: "button", tabindex: "-1", title: "body element"} body
+                                          %a#cke_elementspath_45_0.cke_path_item{"aria-label" => "p element", hidefocus: "true", href: "javascript:void('p')", onclick: "CKEDITOR.tools.callFunction(118,0); return false;", onkeydown: "return CKEDITOR.tools.callFunction(119,0, event );", role: "button", tabindex: "-1", title: "p element"} p
+                                          %span.cke_path_empty  
+                              .form-group
+                                %label.control-label Priority
+                                .control
+                                  %select#task_priority{name: "task[priority]"}
+                                    %option{value: "low"} low
+                                    %option{value: "normal"} normal
+                                    %option{value: "high"} high
+                                    %option{value: "urgent"} urgent
+                                  %input#task_task_list{name: "task[task_list]", type: "hidden", value: ""}/
+                              .form-action
+                                %input.btn.btn-info{name: "commit", type: "submit", value: "Create Task"}/
+              #videos-wrapper.tab-pane
+                .videos-wrapper
+                  .row
+                    .br
+                    .alert.alert-info Click on a file to continue your work or start a new one
+                    %ul#media_btn.nav.nav-pills
+                      %li
+                        %a#create-graphic-btn{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} New Graphic
+                      %li
+                        %a#create-text-btn{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} New Text
+                      %li
+                        %a{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} New Video
+                        .red (coming soon)
+                    #create_graphic.col-lg-8{style: "display: none;"}
+                      .box
+                        .box-header
+                          %h2 Add Image
+                        .box-content
+                          %form#new_graphic.new_graphic{"accept-charset" => "UTF-8", action: "http://example.com:3000/graphics", enctype: "multipart/form-data", method: "post"}
+                            %div{style: "margin:0;padding:0;display:inline"}
+                              %input{name: "utf8", type: "hidden", value: "✓"}/
+                              %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                            %fieldset.col-sm-12
+                              .form-group
+                                %label.control-label Image Title
+                                .control
+                                  %input.form-control{name: "graphic[title]", placeholder: "Image Title", size: "16", type: "text"}/
+                                  %input#job_id{name: "job_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                                  #uniform-graphic_graphic.uploader
+                                    %input#graphic_graphic{name: "graphic[graphic]", type: "file"}/
+                                    %span.filename{style: "-webkit-user-select: none;"} No file selected
+                                    %span.action{style: "-webkit-user-select: none;"} Choose File
+                              .form-action
+                                %a#remove-workspace-graphic.btn.btn-danger{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}> Cancel
+                                 
+                                %input.btn.btn-info{name: "commit", type: "submit", value: "Create"}/
+                    #create_text.col-lg-8{style: "display: none;"}
+                      .box
+                        .box-header
+                          %h2 Add Text
+                        .box-content
+                          %form#new_text.new_text{"accept-charset" => "UTF-8", action: "http://example.com:3000/texts", method: "post"}
+                            %div{style: "margin:0;padding:0;display:inline"}
+                              %input{name: "utf8", type: "hidden", value: "✓"}/
+                              %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                            %fieldset.col-sm-12
+                              .form-group
+                                %label.control-label Title
+                                .control
+                                  .input-prepend.input-group
+                                    %span.input-group-addon Title
+                                    %input.form-control{name: "text[title]", size: "16", type: "text"}/
+                                  %input#job_id{name: "job_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                              .form-action
+                                %a#remove-workspace-text.btn.btn-danger{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}> Cancel
+                                 
+                                %input.btn.btn-info{name: "commit", type: "submit", value: "Create"}/
+                    #create_video.col-lg-8{style: "display: none;"}
+                      .box
+                        .box-header
+                          %h2 Add Video
+                        .box-content
+                          %form#new_video.form-horizontal.row-fluid{"accept-charset" => "UTF-8", action: "http://example.com:3000/job_videos/52614c72a363b8a7cc000005/create", enctype: "multipart/form-data", method: "post"}
+                            %div{style: "margin:0;padding:0;display:inline"}
+                              %input{name: "utf8", type: "hidden", value: "✓"}/
+                              %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                            %fieldset.col-sm-12
+                              .form-group
+                                %label.control-label Video tile
+                                .controls
+                                  %input#video_title{name: "video[title]", placeholder: "Video Title", size: "30", type: "text"}/
+                              .form-group
+                                %label.control-label Place a link to the video
+                                .controls
+                                  %input#video_video_url.from-control{name: "video[video_url]", size: "30", type: "text"}/
+                                  %input#job_id{name: "job_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                              .form-actions
+                                %a#remove-workspace-video.btn.btn-danger{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"}> Cancel
+                                 
+                                %input.btn.btn-info.marginT10{name: "commit", type: "submit", value: "Upload"}/
+                    #new-audio.col-lg-8.hidden
+                      .box
+                        .box-header
+                          %h2 New Audio
+                        .box-content
+                          %form#new_audio.new_audio{"accept-charset" => "UTF-8", action: "http://example.com:3000/audios", enctype: "multipart/form-data", method: "post"}
+                            %div{style: "margin:0;padding:0;display:inline"}
+                              %input{name: "utf8", type: "hidden", value: "✓"}/
+                              %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                            %input#entity{name: "entity", type: "hidden", value: "Project"}/
+                            %input#entity_id{name: "entity_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                            %fieldset.col-sm-12
+                              .form-group
+                                %label.control-label Audio title
+                                .controls
+                                  %input#audio_title{name: "audio[title]", placeholder: "Video Title", size: "30", type: "text"}/
+                              .form-group
+                                %label.control-label Audio
+                                .controls
+                                  #uniform-audio_audio.uploader
+                                    %input#audio_audio.from-control{name: "audio[audio]", type: "file"}/
+                                    %span.filename{style: "-webkit-user-select: none;"} No file selected
+                                    %span.action{style: "-webkit-user-select: none;"} Choose File
+                                  %input#job_id{name: "job_id", type: "hidden", value: "52614c72a363b8a7cc000005"}/
+                              .form-actions
+                                %input.btn.btn-info.marginT10{name: "commit", type: "submit", value: "Upload"}/
+                  #media_content.row
+                    .col-lg-12
+                      .box-header
+                        %h2
+                      .box-content
+                        %ul.file-list
+                        %ul.file-list
+                          %li
+                            %a.media-graphic-link{"data-poster" => "Harisankar P S", "data-profile-link" => "/coderhs", "data-profile-photo" => "/assets/producer.png", "data-video-title" => "trial", entity: "Graphic", href: "http://example.com:3000/graphics/526d5c93a363b868dc000009", title: "Click to Edit"}
+                              %i.halflings-icon.picture>
+                              Trial
+                          %li
+                            %a.media-graphic-link{"data-poster" => "Harisankar P S", "data-profile-link" => "/coderhs", "data-profile-photo" => "/assets/producer.png", "data-video-title" => "test", entity: "Graphic", href: "http://example.com:3000/graphics/526ea1d9a363b83184000017", title: "Click to Edit"}
+                              %i.halflings-icon.picture>
+                              Test
+                          %li
+                            %a.media-graphic-link{"data-poster" => "Harisankar P S", "data-profile-link" => "/coderhs", "data-profile-photo" => "/assets/producer.png", "data-video-title" => "testing 123 ", entity: "Graphic", href: "http://example.com:3000/graphics/5277d856a363b82605000006", title: "Click to Edit"}
+                              %i.halflings-icon.picture>
+                              Testing 123
+                        %ul.file-list
+                        %ul.file-list
+    %a.btn.btn-info{href: "http://example.com:3000/coderhs/dashboard"} Back to Dashboard
+  / end: Widgets Area
+#edit-task-dialog.modal
+  .modal-dialog
+    .modal-content
+      .modal-body
+        .loader
+%footer
+  .container
+    %div{style: "text-align:center;float:left"}
+      © 2013 ContentForest
+      %a{alt: "Twitter Bootstrap Themes", href: "http://bootstrapmaster.com/"}
+    %div{style: "text-align:center;"}
+      %a{alt: "Contact and Support", href: "http://kb.contentforest.com/contact-us/", style: "color:white"}> Contact and Support
+      |
+      %a{alt: "Privacy Policy", href: "http://kb.contentforest.com/privacy-policy/", style: "color:white"}> Privacy Policy
+      |
+      %a{alt: "Terms of service", href: "http://kb.contentforest.com/terms-of-use/", style: "color:white"}> Terms of service
+      |
+      %a{alt: "FAQ", href: "http://kb.contentforest.com/faq/", style: "color:white"}> FAQ
+      |
+      %a{alt: "About", href: "http://kb.contentforest.com/about/", style: "color:white"} About
+#hidden-elements
+  #video-dialog
+    .video-wrapper
+      #video.video-js.vjs-default-skin.vjs-paused{style: "width: 640px; height: 360px;"}
+        %video#video_html5_api.vjs-tech{"data-setup" => "{}", preload: "false"}
+        %div
+        .vjs-poster{style: "display: none;", tabindex: "-1"}
+        .vjs-text-track-display
+        .vjs-loading-spinner
+        .vjs-big-play-button{"aria-label" => "play video", "aria-live" => "polite", tabindex: "0"}
+          %span
+        .vjs-control-bar
+          .vjs-play-control.vjs-control{"aria-live" => "polite", tabindex: "0"}
+            .vjs-control-content
+              %span.vjs-control-text Play
+          .vjs-current-time.vjs-time-controls.vjs-control
+            .vjs-current-time-display{"aria-live" => "off"}
+              %span.vjs-control-text> Current Time
+              0:00
+          .vjs-time-divider
+            %div
+              %span /
+          .vjs-duration.vjs-time-controls.vjs-control
+            .vjs-duration-display{"aria-live" => "off"}
+              %span.vjs-control-text> Duration Time
+              0:00
+          .vjs-remaining-time.vjs-time-controls.vjs-control
+            .vjs-remaining-time-display{"aria-live" => "off"}
+              %span.vjs-control-text> Remaining Time
+              \-0:00
+          .vjs-progress-control.vjs-control
+            .vjs-progress-holder.vjs-slider{"aria-label" => "video progress bar", "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "NaN", "aria-valuetext" => "0:00", tabindex: "0"}
+              .vjs-load-progress
+                %span.vjs-control-text Loaded: 0%
+              .vjs-play-progress{style: "width: 0%;"}
+                %span.vjs-control-text Progress: 0%
+              .vjs-seek-handle.vjs-slider-handle{style: "left: 0%;"}
+                %span.vjs-control-text 00:00
+          .vjs-fullscreen-control.vjs-control{"aria-live" => "polite", tabindex: "0"}
+            .vjs-control-content
+              %span.vjs-control-text Fullscreen
+          .vjs-volume-control.vjs-control
+            .vjs-volume-bar.vjs-slider{"aria-label" => "volume level", "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "100", "aria-valuetext" => "100%", tabindex: "0"}
+              .vjs-volume-level{style: "width: 100%;"}
+                %span.vjs-control-text
+              .vjs-volume-handle.vjs-slider-handle{style: "left: 100%;"}
+                %span.vjs-control-text 00:00
+          .vjs-mute-control.vjs-control{"aria-live" => "polite", tabindex: "0"}
+            %div
+              %span.vjs-control-text Mute
+          .vjs-subtitles-button.vjs-menu-button.vjs-control{"aria-haspopup" => "true", "aria-label" => "Subtitles Menu", "aria-live" => "polite", role: "button", style: "display: none;", tabindex: "0"}
+            .vjs-control-content
+              %span.vjs-control-text Subtitles
+            .vjs-menu
+              %ul.vjs-menu-content
+                %li.vjs-menu-item.vjs-selected{"aria-live" => "polite", "aria-selected" => "true", tabindex: "0"} subtitles off
+          .vjs-captions-button.vjs-menu-button.vjs-control{"aria-haspopup" => "true", "aria-label" => "Captions Menu", "aria-live" => "polite", role: "button", style: "display: none;", tabindex: "0"}
+            .vjs-control-content
+              %span.vjs-control-text Captions
+            .vjs-menu
+              %ul.vjs-menu-content
+                %li.vjs-menu-item.vjs-selected{"aria-live" => "polite", "aria-selected" => "true", tabindex: "0"} captions off
+          .vjs-chapters-button.vjs-menu-button.vjs-control{"aria-haspopup" => "true", "aria-label" => "Chapters Menu", "aria-live" => "polite", role: "button", style: "display: none;", tabindex: "0"}
+            .vjs-control-content
+              %span.vjs-control-text Chapters
+            .vjs-menu
+              %ul.vjs-menu-content
+              %li.vjs-menu-title Chapters
+    .slimScrollDiv{style: "position: relative; overflow: hidden; width: auto; height: 360px;"}
+      .video-info-wrapper.over-hidden{style: "overflow: hidden; width: auto; height: 360px;"}
+        .comment-container
+          .poster.over-hidden
+            %img.float-lt.block{alt: "Assets", height: "50px", src: "#", width: "50px"}/
+            .info.float-lt.pad-left10
+              .name.bold
+                %a{href: "http://example.com:3000/project/52614c72a363b8a7cc000005#"} Username
+              .date-posted.font-size12
+                %abbr.timeago
+          .comments-box
+            %span Comments
+            .comments-list
+              .loader
+            .comments-form-wrapper
+              %form#video-comments.comment-form{"accept-charset" => "UTF-8", action: "http://example.com:3000/project/52614c72a363b8a7cc000005#", "data-remote" => "true", "data-type" => "json", method: "post"}
+                %div{style: "margin:0;padding:0;display:inline"}
+                  %input{name: "utf8", type: "hidden", value: "✓"}/
+                  %input{name: "authenticity_token", type: "hidden", value: "f/wA9OuViA8Utafi8hubw7sPzhjL7EB9iA6+A5IT27s="}/
+                %img.float-lt.block{alt: "Assets", height: "40px", src: "3", width: "40px"}/
+                %textarea#comment_body{cols: "40", name: "comment[body]", placeholder: "Write a comment", rows: "20"}
+                %input#comment_profile{name: "comment[profile]", type: "hidden", value: "5251a2bca363b8f78c000003"}/
+                %button.btn.btn-danger{name: "button", type: "submit"} post
+      .slimScrollBar.ui-draggable{style: "background-color: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; background-position: initial initial; background-repeat: initial initial;"}
+      .slimScrollRail{style: "width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"}
+  #graphics-dialog
+  #text-editor-dialog
+  #audio-dialog
+    .loader
