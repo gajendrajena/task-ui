@@ -1,0 +1,3532 @@
+/* jQuery UI - v1.10.3 - 2013-07-14
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.button.css, jquery.ui.dialog.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=highlight_soft&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=glass&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=glass&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=glass&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
+/* Layout helpers
+----------------------------------*/
+/* line 10, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-helper-hidden {
+  display: none;
+}
+
+/* line 13, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 23, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+/* line 34, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-helper-clearfix {
+  &:before {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+  }
+  &:after {
+    content: "";
+    display: table;
+    border-collapse: collapse;
+    clear: both;
+  }
+  min-height: 0;
+  /* support: IE7 */
+}
+
+/* line 39, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 42, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 45, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity = 0);
+}
+
+/* line 55, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-front {
+  z-index: 100;
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 62, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-disabled {
+  cursor: default !important;
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 71, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+/* line 83, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 90, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable {
+  position: relative;
+}
+
+/* line 93, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+}
+
+/* line 99, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+/* line 102, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+
+/* line 109, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+/* line 116, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 123, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 130, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+
+/* line 137, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+
+/* line 144, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+
+/* line 151, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+
+/* line 158, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  line-height: normal;
+  margin-right: .1em;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  overflow: visible;
+  /* removes extra width in IE */
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none;
+  }
+}
+
+/* line 173, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* to make room for the icon, a width needs to be set here */
+/* line 177, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-icon-only {
+  width: 2.2em;
+}
+
+/* button elements seem to need a little more width */
+/* line 181, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+button.ui-button-icon-only {
+  width: 2.4em;
+}
+
+/* line 184, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-icons-only {
+  width: 3.4em;
+}
+
+/* line 187, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+button.ui-button-icons-only {
+  width: 3.7em;
+}
+
+/* button text element */
+/* line 192, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button .ui-button-text {
+  display: block;
+  line-height: normal;
+}
+
+/* line 196, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-text-only .ui-button-text {
+  padding: 0.4em 1em;
+}
+
+/* line 200, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+  padding: .4em;
+  text-indent: -9999999px;
+}
+
+/* line 205, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text {
+  padding: 0.4em 1em 0.4em 2.1em;
+}
+
+/* line 209, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-text-icon-secondary .ui-button-text {
+  padding: 0.4em 2.1em 0.4em 1em;
+}
+
+.ui-button-text-icons .ui-button-text {
+  padding: 0.4em 2.1em 0.4em 1em;
+  padding-left: 2.1em;
+  padding-right: 2.1em;
+}
+
+/* line 212, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* no icon support for input elements, provide padding by default */
+/* line 217, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+input.ui-button {
+  padding: 0.4em 1em;
+}
+
+/* button icon element(s) */
+/* line 226, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 231, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-icon-only .ui-icon {
+  left: 50%;
+  margin-left: -8px;
+}
+
+/* line 237, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary {
+  left: .5em;
+}
+
+/* line 242, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary {
+  right: .5em;
+}
+
+/* button sets */
+/* line 247, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-buttonset {
+  margin-right: 7px;
+  .ui-button {
+    margin-left: 0;
+    margin-right: -0.3em;
+  }
+}
+
+/* line 250, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* workarounds */
+/* reset extra padding in Firefox, see h5bp.com/l */
+/* line 258, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+input.ui-button::-moz-focus-inner, button.ui-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 262, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2em;
+  outline: 0;
+  .ui-dialog-titlebar {
+    padding: 0.4em 1em;
+    position: relative;
+  }
+  .ui-dialog-title {
+    float: left;
+    margin: 0.1em 0;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ui-dialog-titlebar-close {
+    position: absolute;
+    right: .3em;
+    top: 50%;
+    width: 21px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 20px;
+  }
+  .ui-dialog-content {
+    position: relative;
+    border: 0;
+    padding: 0.5em 1em;
+    background: none;
+    overflow: auto;
+  }
+  .ui-dialog-buttonpane {
+    text-align: left;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    margin-top: .5em;
+    padding: 0.3em 1em 0.5em 0.4em;
+    .ui-dialog-buttonset {
+      float: right;
+    }
+    button {
+      margin: 0.5em 0.4em 0.5em 0;
+      cursor: pointer;
+    }
+  }
+  .ui-resizable-se {
+    width: 12px;
+    height: 12px;
+    right: -5px;
+    bottom: -5px;
+    background-position: 16px 16px;
+  }
+}
+
+/* line 269, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 273, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 281, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 290, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 297, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 304, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 307, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 311, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 318, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}
+
+/* Component containers
+----------------------------------*/
+/* line 324, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1.1em;
+  .ui-widget {
+    font-size: 1em;
+  }
+  input, select, textarea, button {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1em;
+  }
+}
+
+/* line 328, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 334, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 338, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-content {
+  border: 1px solid #aaaaaa;
+  background: white url("jquery_ui/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+  color: #222222;
+  a {
+    color: #222222;
+  }
+}
+
+/* line 343, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 346, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-header {
+  border: 1px solid #aaaaaa;
+  background: #cccccc url("jquery_ui/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x;
+  color: #222222;
+  font-weight: bold;
+  a {
+    color: #222222;
+  }
+}
+
+/* line 352, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* Interaction states
+----------------------------------*/
+/* line 360, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: 1px solid lightgrey;
+  background: #e6e6e6 url("jquery_ui/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #555555;
+}
+
+/* line 368, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-default a {
+  color: #555555;
+  text-decoration: none;
+  &:link, &:visited {
+    color: #555555;
+    text-decoration: none;
+  }
+}
+
+/* line 377, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  border: 1px solid #999999;
+  background: #dadada url("jquery_ui/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #212121;
+}
+
+/* line 386, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-hover a {
+  color: #212121;
+  text-decoration: none;
+  &:hover, &:link, &:visited {
+    color: #212121;
+    text-decoration: none;
+  }
+}
+
+/* line 392, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  border: 1px solid #aaaaaa;
+  background: white url("jquery_ui/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #212121;
+}
+
+/* line 400, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-active a {
+  color: #212121;
+  text-decoration: none;
+  &:link, &:visited {
+    color: #212121;
+    text-decoration: none;
+  }
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 409, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  border: 1px solid #fcefa1;
+  background: #fbf9ee url("jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
+  color: #363636;
+}
+
+/* line 416, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
+  color: #363636;
+}
+
+/* line 421, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
+  border: 1px solid #cd0a0a;
+  background: #fef1ec url("jquery_ui/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
+  color: #cd0a0a;
+}
+
+/* line 428, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a, .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
+  color: #cd0a0a;
+}
+
+/* line 433, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 438, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
+  font-weight: bold;
+}
+
+/* line 443, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: Alpha(Opacity = 70);
+  font-weight: normal;
+}
+
+/* line 450, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: Alpha(Opacity = 35);
+  background-image: none;
+}
+
+/* line 455, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-disabled .ui-icon {
+  filter: Alpha(Opacity = 35);
+  /* For IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 463, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("jquery_ui/ui-icons_222222_256x240.png");
+}
+
+/* line 468, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
+  background-image: url("jquery_ui/ui-icons_222222_256x240.png");
+}
+
+/* line 471, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 474, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-default .ui-icon {
+  background-image: url("jquery_ui/ui-icons_888888_256x240.png");
+}
+
+/* line 478, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon {
+  background-image: url("jquery_ui/ui-icons_454545_256x240.png");
+}
+
+/* line 481, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 484, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-highlight .ui-icon {
+  background-image: url("jquery_ui/ui-icons_2e83ff_256x240.png");
+}
+
+/* line 488, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
+  background-image: url("jquery_ui/ui-icons_cd0a0a_256x240.png");
+}
+
+/* positioning */
+/* line 493, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-blank {
+  background-position: 16px 16px;
+}
+
+/* line 494, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-n {
+  background-position: 0 0;
+}
+
+/* line 495, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-ne {
+  background-position: -16px 0;
+}
+
+/* line 496, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-e {
+  background-position: -32px 0;
+}
+
+/* line 497, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-se {
+  background-position: -48px 0;
+}
+
+/* line 498, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-s {
+  background-position: -64px 0;
+}
+
+/* line 499, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-sw {
+  background-position: -80px 0;
+}
+
+/* line 500, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-w {
+  background-position: -96px 0;
+}
+
+/* line 501, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-1-nw {
+  background-position: -112px 0;
+}
+
+/* line 502, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-2-n-s {
+  background-position: -128px 0;
+}
+
+/* line 503, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-carat-2-e-w {
+  background-position: -144px 0;
+}
+
+/* line 504, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+
+/* line 505, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-ne {
+  background-position: -16px -16px;
+}
+
+/* line 506, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+
+/* line 507, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-se {
+  background-position: -48px -16px;
+}
+
+/* line 508, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+/* line 509, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-sw {
+  background-position: -80px -16px;
+}
+
+/* line 510, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-w {
+  background-position: -96px -16px;
+}
+
+/* line 511, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-1-nw {
+  background-position: -112px -16px;
+}
+
+/* line 512, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-2-n-s {
+  background-position: -128px -16px;
+}
+
+/* line 513, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-triangle-2-e-w {
+  background-position: -144px -16px;
+}
+
+/* line 514, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-n {
+  background-position: 0 -32px;
+}
+
+/* line 515, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-ne {
+  background-position: -16px -32px;
+}
+
+/* line 516, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-e {
+  background-position: -32px -32px;
+}
+
+/* line 517, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-se {
+  background-position: -48px -32px;
+}
+
+/* line 518, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-s {
+  background-position: -64px -32px;
+}
+
+/* line 519, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-sw {
+  background-position: -80px -32px;
+}
+
+/* line 520, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-w {
+  background-position: -96px -32px;
+}
+
+/* line 521, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-1-nw {
+  background-position: -112px -32px;
+}
+
+/* line 522, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-2-n-s {
+  background-position: -128px -32px;
+}
+
+/* line 523, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-2-ne-sw {
+  background-position: -144px -32px;
+}
+
+/* line 524, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-2-e-w {
+  background-position: -160px -32px;
+}
+
+/* line 525, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-2-se-nw {
+  background-position: -176px -32px;
+}
+
+/* line 526, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowstop-1-n {
+  background-position: -192px -32px;
+}
+
+/* line 527, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowstop-1-e {
+  background-position: -208px -32px;
+}
+
+/* line 528, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowstop-1-s {
+  background-position: -224px -32px;
+}
+
+/* line 529, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowstop-1-w {
+  background-position: -240px -32px;
+}
+
+/* line 530, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-n {
+  background-position: 0 -48px;
+}
+
+/* line 531, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-ne {
+  background-position: -16px -48px;
+}
+
+/* line 532, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-e {
+  background-position: -32px -48px;
+}
+
+/* line 533, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-se {
+  background-position: -48px -48px;
+}
+
+/* line 534, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-s {
+  background-position: -64px -48px;
+}
+
+/* line 535, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-sw {
+  background-position: -80px -48px;
+}
+
+/* line 536, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-w {
+  background-position: -96px -48px;
+}
+
+/* line 537, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-1-nw {
+  background-position: -112px -48px;
+}
+
+/* line 538, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-2-n-s {
+  background-position: -128px -48px;
+}
+
+/* line 539, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-2-ne-sw {
+  background-position: -144px -48px;
+}
+
+/* line 540, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-2-e-w {
+  background-position: -160px -48px;
+}
+
+/* line 541, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthick-2-se-nw {
+  background-position: -176px -48px;
+}
+
+/* line 542, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthickstop-1-n {
+  background-position: -192px -48px;
+}
+
+/* line 543, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthickstop-1-e {
+  background-position: -208px -48px;
+}
+
+/* line 544, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthickstop-1-s {
+  background-position: -224px -48px;
+}
+
+/* line 545, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowthickstop-1-w {
+  background-position: -240px -48px;
+}
+
+/* line 546, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturnthick-1-w {
+  background-position: 0 -64px;
+}
+
+/* line 547, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturnthick-1-n {
+  background-position: -16px -64px;
+}
+
+/* line 548, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturnthick-1-e {
+  background-position: -32px -64px;
+}
+
+/* line 549, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturnthick-1-s {
+  background-position: -48px -64px;
+}
+
+/* line 550, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturn-1-w {
+  background-position: -64px -64px;
+}
+
+/* line 551, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturn-1-n {
+  background-position: -80px -64px;
+}
+
+/* line 552, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturn-1-e {
+  background-position: -96px -64px;
+}
+
+/* line 553, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowreturn-1-s {
+  background-position: -112px -64px;
+}
+
+/* line 554, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowrefresh-1-w {
+  background-position: -128px -64px;
+}
+
+/* line 555, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowrefresh-1-n {
+  background-position: -144px -64px;
+}
+
+/* line 556, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowrefresh-1-e {
+  background-position: -160px -64px;
+}
+
+/* line 557, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrowrefresh-1-s {
+  background-position: -176px -64px;
+}
+
+/* line 558, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-4 {
+  background-position: 0 -80px;
+}
+
+/* line 559, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-arrow-4-diag {
+  background-position: -16px -80px;
+}
+
+/* line 560, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-extlink {
+  background-position: -32px -80px;
+}
+
+/* line 561, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-newwin {
+  background-position: -48px -80px;
+}
+
+/* line 562, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-refresh {
+  background-position: -64px -80px;
+}
+
+/* line 563, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-shuffle {
+  background-position: -80px -80px;
+}
+
+/* line 564, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-transfer-e-w {
+  background-position: -96px -80px;
+}
+
+/* line 565, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-transferthick-e-w {
+  background-position: -112px -80px;
+}
+
+/* line 566, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-folder-collapsed {
+  background-position: 0 -96px;
+}
+
+/* line 567, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-folder-open {
+  background-position: -16px -96px;
+}
+
+/* line 568, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-document {
+  background-position: -32px -96px;
+}
+
+/* line 569, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-document-b {
+  background-position: -48px -96px;
+}
+
+/* line 570, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-note {
+  background-position: -64px -96px;
+}
+
+/* line 571, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-mail-closed {
+  background-position: -80px -96px;
+}
+
+/* line 572, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-mail-open {
+  background-position: -96px -96px;
+}
+
+/* line 573, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-suitcase {
+  background-position: -112px -96px;
+}
+
+/* line 574, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-comment {
+  background-position: -128px -96px;
+}
+
+/* line 575, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-person {
+  background-position: -144px -96px;
+}
+
+/* line 576, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-print {
+  background-position: -160px -96px;
+}
+
+/* line 577, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-trash {
+  background-position: -176px -96px;
+}
+
+/* line 578, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-locked {
+  background-position: -192px -96px;
+}
+
+/* line 579, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-unlocked {
+  background-position: -208px -96px;
+}
+
+/* line 580, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-bookmark {
+  background-position: -224px -96px;
+}
+
+/* line 581, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-tag {
+  background-position: -240px -96px;
+}
+
+/* line 582, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-home {
+  background-position: 0 -112px;
+}
+
+/* line 583, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-flag {
+  background-position: -16px -112px;
+}
+
+/* line 584, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-calendar {
+  background-position: -32px -112px;
+}
+
+/* line 585, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-cart {
+  background-position: -48px -112px;
+}
+
+/* line 586, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-pencil {
+  background-position: -64px -112px;
+}
+
+/* line 587, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-clock {
+  background-position: -80px -112px;
+}
+
+/* line 588, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-disk {
+  background-position: -96px -112px;
+}
+
+/* line 589, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-calculator {
+  background-position: -112px -112px;
+}
+
+/* line 590, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-zoomin {
+  background-position: -128px -112px;
+}
+
+/* line 591, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-zoomout {
+  background-position: -144px -112px;
+}
+
+/* line 592, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-search {
+  background-position: -160px -112px;
+}
+
+/* line 593, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-wrench {
+  background-position: -176px -112px;
+}
+
+/* line 594, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-gear {
+  background-position: -192px -112px;
+}
+
+/* line 595, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-heart {
+  background-position: -208px -112px;
+}
+
+/* line 596, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-star {
+  background-position: -224px -112px;
+}
+
+/* line 597, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-link {
+  background-position: -240px -112px;
+}
+
+/* line 598, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-cancel {
+  background-position: 0 -128px;
+}
+
+/* line 599, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-plus {
+  background-position: -16px -128px;
+}
+
+/* line 600, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-plusthick {
+  background-position: -32px -128px;
+}
+
+/* line 601, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-minus {
+  background-position: -48px -128px;
+}
+
+/* line 602, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-minusthick {
+  background-position: -64px -128px;
+}
+
+/* line 603, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-close {
+  background-position: -80px -128px;
+}
+
+/* line 604, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-closethick {
+  background-position: -96px -128px;
+}
+
+/* line 605, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-key {
+  background-position: -112px -128px;
+}
+
+/* line 606, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-lightbulb {
+  background-position: -128px -128px;
+}
+
+/* line 607, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-scissors {
+  background-position: -144px -128px;
+}
+
+/* line 608, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-clipboard {
+  background-position: -160px -128px;
+}
+
+/* line 609, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-copy {
+  background-position: -176px -128px;
+}
+
+/* line 610, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-contact {
+  background-position: -192px -128px;
+}
+
+/* line 611, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-image {
+  background-position: -208px -128px;
+}
+
+/* line 612, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-video {
+  background-position: -224px -128px;
+}
+
+/* line 613, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-script {
+  background-position: -240px -128px;
+}
+
+/* line 614, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-alert {
+  background-position: 0 -144px;
+}
+
+/* line 615, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-info {
+  background-position: -16px -144px;
+}
+
+/* line 616, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-notice {
+  background-position: -32px -144px;
+}
+
+/* line 617, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-help {
+  background-position: -48px -144px;
+}
+
+/* line 618, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-check {
+  background-position: -64px -144px;
+}
+
+/* line 619, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-bullet {
+  background-position: -80px -144px;
+}
+
+/* line 620, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-radio-on {
+  background-position: -96px -144px;
+}
+
+/* line 621, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-radio-off {
+  background-position: -112px -144px;
+}
+
+/* line 622, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-pin-w {
+  background-position: -128px -144px;
+}
+
+/* line 623, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-pin-s {
+  background-position: -144px -144px;
+}
+
+/* line 624, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-play {
+  background-position: 0 -160px;
+}
+
+/* line 625, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-pause {
+  background-position: -16px -160px;
+}
+
+/* line 626, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-seek-next {
+  background-position: -32px -160px;
+}
+
+/* line 627, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-seek-prev {
+  background-position: -48px -160px;
+}
+
+/* line 628, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-seek-end {
+  background-position: -64px -160px;
+}
+
+/* line 629, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-seek-start, .ui-icon-seek-first {
+  background-position: -80px -160px;
+}
+
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+/* line 631, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+/* line 632, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-stop {
+  background-position: -96px -160px;
+}
+
+/* line 633, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-eject {
+  background-position: -112px -160px;
+}
+
+/* line 634, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-volume-off {
+  background-position: -128px -160px;
+}
+
+/* line 635, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-volume-on {
+  background-position: -144px -160px;
+}
+
+/* line 636, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-power {
+  background-position: 0 -176px;
+}
+
+/* line 637, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-signal-diag {
+  background-position: -16px -176px;
+}
+
+/* line 638, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-signal {
+  background-position: -32px -176px;
+}
+
+/* line 639, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-battery-0 {
+  background-position: -48px -176px;
+}
+
+/* line 640, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-battery-1 {
+  background-position: -64px -176px;
+}
+
+/* line 641, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-battery-2 {
+  background-position: -80px -176px;
+}
+
+/* line 642, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-battery-3 {
+  background-position: -96px -176px;
+}
+
+/* line 643, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-plus {
+  background-position: 0 -192px;
+}
+
+/* line 644, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-minus {
+  background-position: -16px -192px;
+}
+
+/* line 645, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-close {
+  background-position: -32px -192px;
+}
+
+/* line 646, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+}
+
+/* line 647, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-triangle-s {
+  background-position: -64px -192px;
+}
+
+/* line 648, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+}
+
+/* line 649, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-triangle-n {
+  background-position: -96px -192px;
+}
+
+/* line 650, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-arrow-e {
+  background-position: -112px -192px;
+}
+
+/* line 651, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-arrow-s {
+  background-position: -128px -192px;
+}
+
+/* line 652, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-arrow-w {
+  background-position: -144px -192px;
+}
+
+/* line 653, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-arrow-n {
+  background-position: -160px -192px;
+}
+
+/* line 654, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-zoomin {
+  background-position: -176px -192px;
+}
+
+/* line 655, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-zoomout {
+  background-position: -192px -192px;
+}
+
+/* line 656, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circle-check {
+  background-position: -208px -192px;
+}
+
+/* line 657, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circlesmall-plus {
+  background-position: 0 -208px;
+}
+
+/* line 658, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circlesmall-minus {
+  background-position: -16px -208px;
+}
+
+/* line 659, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-circlesmall-close {
+  background-position: -32px -208px;
+}
+
+/* line 660, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-squaresmall-plus {
+  background-position: -48px -208px;
+}
+
+/* line 661, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-squaresmall-minus {
+  background-position: -64px -208px;
+}
+
+/* line 662, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-squaresmall-close {
+  background-position: -80px -208px;
+}
+
+/* line 663, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-grip-dotted-vertical {
+  background-position: 0 -224px;
+}
+
+/* line 664, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-grip-dotted-horizontal {
+  background-position: -16px -224px;
+}
+
+/* line 665, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-grip-solid-vertical {
+  background-position: -32px -224px;
+}
+
+/* line 666, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-grip-solid-horizontal {
+  background-position: -48px -224px;
+}
+
+/* line 667, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px;
+}
+
+/* line 668, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-icon-grip-diagonal-se {
+  background-position: -80px -224px;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Corner radius */
+/* line 678, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+  border-top-left-radius: 4px;
+}
+
+/* line 684, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+  border-top-right-radius: 4px;
+}
+
+/* line 690, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border-bottom-left-radius: 4px;
+}
+
+/* line 696, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 4px;
+}
+
+/* Overlays */
+/* line 701, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-overlay {
+  background: #aaaaaa url("jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: Alpha(Opacity = 30);
+}
+
+/* line 706, ../../vendor/assets/stylesheets/jquery_ui/jquery-ui.custom.css */
+
+.ui-widget-shadow {
+  margin: -8px 0 0 -8px;
+  padding: 8px;
+  background: #aaaaaa url("jquery_ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: Alpha(Opacity = 30);
+  border-radius: 8px;
+}
+
+/*
+Video.js Default Styles (http://videojs.com)
+Version 4.1.0
+*/
+/*
+REQUIRED STYLES (be careful overriding)
+================================================================================ */
+/* When loading the player, the video tag is replaced with a DIV,
+   that will hold the video tag or object tag for other playback methods.
+   The div contains the video playback element (Flash or HTML5) and controls, and sets the width and height of the video.
+
+   ** If you want to add some kind of border/padding (e.g. a frame), or special positioning, use another containing element.
+   Otherwise you risk messing up control positioning and full window mode. **
+*/
+/* line 17, ../../vendor/assets/stylesheets/video-js.css */
+
+.video-js {
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  /* Start with 10px for base font size so other dimensions can be em based and easily calculable. */
+  font-size: 10px;
+  /* Allow poster to be vertially aligned. */
+  vertical-align: middle;
+  /*  display: table-cell; */
+  /*This works in Safari but not Firefox.*/
+  /* Turn off user selection (text highlighting) by default.
+     The majority of player components will not be text blocks.
+     Text areas will need to turn user selection back on. */
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;
+  .vjs-tech {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:-moz-full-screen {
+    position: absolute;
+  }
+}
+
+/* Playback technology elements expand to the width/height of the containing div.
+    <video> or <object> */
+/* line 39, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when checking fullScreenEnabled. */
+/* line 48, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Fullscreen Styles */
+/* line 51, ../../vendor/assets/stylesheets/video-js.css */
+
+body.vjs-full-window {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  /* Fix for IE6 full-window. http://www.cssplay.co.uk/layouts/fixed.html */
+}
+
+/* line 57, ../../vendor/assets/stylesheets/video-js.css */
+
+.video-js {
+  &.vjs-fullscreen {
+    position: fixed;
+    overflow: hidden;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+    _position: absolute;
+    /* IE6 Full-window (underscore hack) */
+  }
+  &:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+/* line 69, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Poster Styles */
+/* line 74, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-poster {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+/* line 85, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Text Track Styles */
+/* Overall track holder for both captions and subtitles */
+/* line 95, ../../vendor/assets/stylesheets/video-js.css */
+
+.video-js {
+  .vjs-text-track-display {
+    text-align: center;
+    position: absolute;
+    bottom: 4em;
+    left: 1em;
+    /* Leave padding on left and right */
+    right: 1em;
+    font-family: Arial, sans-serif;
+  }
+  .vjs-text-track {
+    display: none;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 0.1em;
+    /* Transparent black background, or fallback to all black (oldIE) */
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .vjs-subtitles {
+    color: #fff;
+  }
+  .vjs-captions {
+    color: #fc6;
+  }
+}
+
+/* Individual tracks */
+/* line 104, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 112, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Subtitles are white */
+/* line 113, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Captions are yellow */
+/* line 114, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-tt-cue {
+  display: block;
+}
+
+/* Fading sytles, used to fade control bar. */
+/* line 117, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-fade-in {
+  display: block !important;
+  visibility: visible;
+  /* Needed to make sure things hide in older browsers too. */
+  opacity: 1;
+  -webkit-transition: visibility 0.1s, opacity 0.1s;
+  -moz-transition: visibility 0.1s, opacity 0.1s;
+  -ms-transition: visibility 0.1s, opacity 0.1s;
+  -o-transition: visibility 0.1s, opacity 0.1s;
+  transition: visibility 0.1s, opacity 0.1s;
+}
+
+/* line 128, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-fade-out {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 1.5s, opacity 1.5s;
+  -moz-transition: visibility 1.5s, opacity 1.5s;
+  -ms-transition: visibility 1.5s, opacity 1.5s;
+  -o-transition: visibility 1.5s, opacity 1.5s;
+  transition: visibility 1.5s, opacity 1.5s;
+  /* Wait a moment before fading out the control bar */
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -ms-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+}
+
+/* Hide disabled or unsupported controls */
+/* line 147, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-default-skin .vjs-hidden {
+  display: none;
+}
+
+/* line 149, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-lock-showing {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* DEFAULT SKIN (override in another file to create new skins)
+================================================================================
+Instead of editing this file, I recommend creating your own skin CSS file to be included after this file,
+so you can upgrade to newer versions easier. You can remove all these styles by removing the 'vjs-default-skin' class from the tag. */
+/* Base UI Component Classes
+-------------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'VideoJS';
+  src: url("vjs.eot");
+  src: url("vjs.eot?#iefix") format("embedded-opentype"), url("vjs.woff") format("woff"), url("vjs.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* line 172, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-default-skin {
+  color: #ccc;
+  .vjs-slider {
+    outline: 0;
+    /* Replace browser focus hightlight with handle highlight */
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    background: #323232;
+    /* IE8- Fallback */
+    background: rgba(100, 100, 100, 0.5);
+    &:focus {
+      background: #464646;
+      /* IE8- Fallback */
+      background: rgba(100, 100, 100, 0.7);
+      -webkit-box-shadow: 0 0 2em white;
+      -moz-box-shadow: 0 0 2em white;
+      box-shadow: 0 0 2em white;
+    }
+  }
+  .vjs-slider-handle {
+    position: absolute;
+    /* Needed for IE6 */
+    left: 0;
+    top: 0;
+    &:before {
+      /*content: "\f111";*/
+      /* Circle icon = f111 */
+      content: "\e009";
+      /* Square icon */
+      font-family: VideoJS;
+      font-size: 1em;
+      line-height: 1;
+      text-align: center;
+      text-shadow: 0em 0em 1em white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* Rotate the square icon to make a diamond */
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    }
+  }
+  .vjs-control-bar {
+    display: none;
+    /* Start hidden */
+    position: absolute;
+    /* Distance from the bottom of the box/video. Keep 0. Use height to add more bottom margin. */
+    bottom: 0;
+    /* 100% width of player div */
+    left: 0;
+    right: 0;
+    /* Controls are absolutely position, so no padding necessary */
+    padding: 0;
+    margin: 0;
+    /* Height includes any margin you want above or below control items */
+    height: 3.0em;
+    background-color: black;
+    /* Slight blue so it can be seen more easily on black. */
+    background-color: rgba(7, 40, 50, 0.7);
+    /* Default font settings */
+    font-style: normal;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+  }
+  .vjs-control {
+    outline: none;
+    position: relative;
+    float: left;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 3.0em;
+    width: 4em;
+    &:before {
+      font-family: VideoJS;
+      font-size: 1.5em;
+      line-height: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    &:focus:before, &:hover:before {
+      text-shadow: 0em 0em 1em white;
+    }
+    &:focus {
+      /*  outline: 0; */
+      /* keyboard-only users cannot see the focus on several of the UI elements when this is set to 0 */
+    }
+  }
+  .vjs-control-text {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .vjs-play-control {
+    width: 5em;
+    cursor: pointer;
+    &:before {
+      content: "\e001";
+      /* Play Icon */
+    }
+  }
+  &.vjs-playing .vjs-play-control:before {
+    content: "\e002";
+    /* Pause Icon */
+  }
+  .vjs-mute-control, .vjs-volume-menu-button {
+    cursor: pointer;
+    float: right;
+  }
+  .vjs-mute-control:before, .vjs-volume-menu-button:before {
+    content: "\e006";
+    /* Full volume */
+  }
+  .vjs-mute-control.vjs-vol-0:before, .vjs-volume-menu-button.vjs-vol-0:before {
+    content: "\e003";
+    /* No volume */
+  }
+  .vjs-mute-control.vjs-vol-1:before, .vjs-volume-menu-button.vjs-vol-1:before {
+    content: "\e004";
+    /* Half volume */
+  }
+  .vjs-mute-control.vjs-vol-2:before, .vjs-volume-menu-button.vjs-vol-2:before {
+    content: "\e005";
+    /* Full volume */
+  }
+  .vjs-volume-control {
+    width: 5em;
+    float: right;
+  }
+  .vjs-volume-bar {
+    width: 5em;
+    height: 0.6em;
+    margin: 1.1em auto 0;
+  }
+  .vjs-volume-menu-button .vjs-menu-content {
+    height: 2.9em;
+  }
+  .vjs-volume-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.5em;
+    background: #66a8cc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
+  }
+  .vjs-volume-bar .vjs-volume-handle {
+    width: 0.5em;
+    height: 0.5em;
+  }
+  .vjs-volume-handle:before {
+    font-size: 0.9em;
+    top: -0.2em;
+    left: -0.2em;
+    width: 1em;
+    height: 1em;
+  }
+  .vjs-volume-menu-button .vjs-menu .vjs-menu-content {
+    width: 6em;
+    left: -4em;
+  }
+  .vjs-progress-control {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: auto;
+    font-size: 0.3em;
+    height: 1em;
+    /* Set above the rest of the controls. */
+    top: -1em;
+    /* Shrink the bar slower than it grows. */
+    -webkit-transition: top 0.4s, height 0.4s, font-size 0.4s, -webkit-transform 0.4s;
+    -moz-transition: top 0.4s, height 0.4s, font-size 0.4s, -moz-transform 0.4s;
+    -o-transition: top 0.4s, height 0.4s, font-size 0.4s, -o-transform 0.4s;
+    transition: top 0.4s, height 0.4s, font-size 0.4s, transform 0.4s;
+  }
+  &:hover .vjs-progress-control {
+    font-size: .9em;
+    /* Even though we're not changing the top/height, we need to include them in
+        the transition so they're handled correctly. */
+    -webkit-transition: top 0.2s, height 0.2s, font-size 0.2s, -webkit-transform 0.2s;
+    -moz-transition: top 0.2s, height 0.2s, font-size 0.2s, -moz-transform 0.2s;
+    -o-transition: top 0.2s, height 0.2s, font-size 0.2s, -o-transform 0.2s;
+    transition: top 0.2s, height 0.2s, font-size 0.2s, transform 0.2s;
+  }
+  .vjs-progress-holder {
+    /* Placement within the progress control item */
+    height: 100%;
+    .vjs-play-progress, .vjs-load-progress {
+      position: absolute;
+      display: block;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      /* Needed for IE6 */
+      left: 0;
+      top: 0;
+    }
+  }
+  .vjs-play-progress {
+    /*
+      Using a data URI to create the white diagonal lines with a transparent
+        background. Surprising works in IE8.
+        Created using http://www.patternify.com
+      Changing the first color value will change the bar color.
+      Also using a paralax effect to make the lines move backwards.
+        The -50% left position makes that happen.
+    */
+    background: #66a8cc url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
+  }
+  .vjs-load-progress {
+    background: #646464;
+    /* IE8- Fallback */
+    background: rgba(255, 255, 255, 0.4);
+  }
+  .vjs-seek-handle {
+    width: 1.5em;
+    height: 100%;
+    &:before {
+      padding-top: 0.1em;
+      /* Minor adjustment */
+    }
+  }
+  .vjs-time-controls {
+    font-size: 1em;
+    /* Align vertically by making the line height the same as the control bar */
+    line-height: 3em;
+  }
+  .vjs-current-time, .vjs-duration {
+    float: left;
+  }
+  .vjs-remaining-time {
+    display: none;
+    float: left;
+  }
+}
+
+/* Slider - used for Volume bar and Seek bar */
+/* line 177, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 187, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 196, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 203, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Control Bar
+-------------------------------------------------------------------------------- */
+/* The default control bar. Created by controls.js */
+/* line 227, ../../vendor/assets/stylesheets/video-js.css */
+
+/* General styles for individual controls. */
+/* line 250, ../../vendor/assets/stylesheets/video-js.css */
+
+/* FontAwsome button icons */
+/* line 262, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Replacement for focus outline */
+/* line 277, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 281, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Hide control text visually, but have it available for screenreaders: h5bp.com/v */
+/* line 284, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Play/Pause
+-------------------------------------------------------------------------------- */
+/* line 288, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 292, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 295, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Rewind
+-------------------------------------------------------------------------------- */
+/*.vjs-default-skin .vjs-rewind-control { width: 5em; cursor: pointer !important; }
+.vjs-default-skin .vjs-rewind-control div { width: 19px; height: 16px; background: url('video-js.png'); margin: 0.5em auto 0; }
+*/
+/* Volume/Mute
+-------------------------------------------------------------------------------- */
+/* line 308, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 313, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 317, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 321, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 325, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 329, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 333, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 339, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 343, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 353, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 358, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 367, ../../vendor/assets/stylesheets/video-js.css */
+
+/*.vjs-default-skin .vjs-menu-button .vjs-volume-control {
+  height: 1.5em;
+}*/
+/* Progress
+-------------------------------------------------------------------------------- */
+/* line 378, ../../vendor/assets/stylesheets/video-js.css */
+
+/* On hover, make the progress bar grow to something that's more clickable.
+    This simply changes the overall font for the progress bar, and this
+    updates both the em-based widths and heights, as wells as the icon font */
+/* line 399, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Box containing play and load progresses. Also acts as seek scrubber. */
+/* line 411, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Progress Bars */
+/* line 418, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 429, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 442, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 447, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 452, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Time Display
+-------------------------------------------------------------------------------- */
+/* line 458, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 463, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 464, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Remaining time is in the HTML, but not included in default design */
+/* line 466, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 467, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-time-divider {
+  float: left;
+  line-height: 3em;
+}
+
+/* Fullscreen
+-------------------------------------------------------------------------------- */
+/* line 471, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-default-skin {
+  .vjs-fullscreen-control {
+    width: 3.8em;
+    cursor: pointer;
+    float: right;
+    &:before {
+      content: "\e000";
+      /* Enter full screen */
+    }
+  }
+  &.vjs-fullscreen .vjs-fullscreen-control:before {
+    content: "\e00b";
+    /* Exit full screen */
+  }
+  .vjs-big-play-button {
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 12.0em;
+    height: 8.0em;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 1;
+    /* Need a slightly gray bg so it can be seen on black backgrounds */
+    background-color: #282828;
+    background-color: rgba(7, 40, 50, 0.7);
+    border: 0.3em solid #323232;
+    border-color: rgba(255, 255, 255, 0.25);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+    -moz-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+    -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s, -webkit-transform 0.4s;
+    -moz-transition: border 0.4s, -moz-box-shadow 0.4s, -moz-transform 0.4s;
+    -o-transition: border 0.4s, -o-box-shadow 0.4s, -o-transform 0.4s;
+    transition: border 0.4s, box-shadow 0.4s, transform 0.4s;
+  }
+  &:hover .vjs-big-play-button {
+    outline: 0;
+    border-color: white;
+    border-color: white;
+    /* IE8 needs a non-glow hover state */
+    background-color: #505050;
+    background-color: rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 0 0 3em white;
+    -moz-box-shadow: 0 0 3em white;
+    box-shadow: 0 0 3em white;
+    -webkit-transition: border 0s, -webkit-box-shadow 0s, -webkit-transform 0s;
+    -moz-transition: border 0s, -moz-box-shadow 0s, -moz-transform 0s;
+    -o-transition: border 0s, -o-box-shadow 0s, -o-transform 0s;
+    transition: border 0s, box-shadow 0s, transform 0s;
+  }
+  .vjs-big-play-button {
+    &:focus {
+      outline: 0;
+      border-color: white;
+      border-color: white;
+      /* IE8 needs a non-glow hover state */
+      background-color: #505050;
+      background-color: rgba(50, 50, 50, 0.75);
+      -webkit-box-shadow: 0 0 3em white;
+      -moz-box-shadow: 0 0 3em white;
+      box-shadow: 0 0 3em white;
+      -webkit-transition: border 0s, -webkit-box-shadow 0s, -webkit-transform 0s;
+      -moz-transition: border 0s, -moz-box-shadow 0s, -moz-transform 0s;
+      -o-transition: border 0s, -o-box-shadow 0s, -o-transform 0s;
+      transition: border 0s, box-shadow 0s, transform 0s;
+    }
+    &:before {
+      content: "\e001";
+      /* Play icon */
+      font-family: VideoJS;
+      font-size: 3em;
+      line-height: 2.66;
+      text-shadow: 0.05em 0.05em 0.1em black;
+      text-align: center;
+      /* Needed for IE8 */
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* line 476, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 479, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Big Play Button (at start)
+---------------------------------------------------------*/
+/* line 485, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 521, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 539, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Loading Spinner
+---------------------------------------------------------*/
+/* line 555, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5em;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  margin-left: -0.5em;
+  margin-top: -0.5em;
+  opacity: 0.75;
+  -webkit-animation: spin 1.5s infinite linear;
+  -moz-animation: spin 1.5s infinite linear;
+  -o-animation: spin 1.5s infinite linear;
+  animation: spin 1.5s infinite linear;
+}
+
+/* line 578, ../../vendor/assets/stylesheets/video-js.css */
+
+.vjs-default-skin {
+  .vjs-loading-spinner {
+    &:before {
+      content: "\e00a";
+      /* Loading spinner icon */
+      font-family: VideoJS;
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      text-shadow: 0em 0em 0.1em black;
+    }
+    &:after {
+      content: "\e00a";
+      /* Loading spinner icon */
+      font-family: VideoJS;
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .vjs-menu-button {
+    float: right;
+    cursor: pointer;
+  }
+  .vjs-menu {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0em;
+    /* (Width of vjs-menu - width of button) / 2 */
+    width: 0em;
+    height: 0em;
+    margin-bottom: 3em;
+    border-left: 2em solid transparent;
+    border-right: 2em solid transparent;
+    border-top: 1.55em solid black;
+    /* Same top as ul bottom */
+    border-top-color: rgba(7, 40, 50, 0.5);
+    /* Same as ul background */
+  }
+  .vjs-menu-button {
+    .vjs-menu .vjs-menu-content {
+      display: block;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      width: 10em;
+      bottom: 1.5em;
+      /* Same bottom as vjs-menu border-top */
+      max-height: 15em;
+      overflow: auto;
+      left: -5em;
+      /* Width of menu - width of button / 2 */
+      background-color: black;
+      background-color: rgba(7, 40, 50, 0.7);
+      -webkit-box-shadow: -20px -20px 0px rgba(255, 255, 255, 0.5);
+      -moz-box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
+      box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+    }
+    &:hover .vjs-menu {
+      display: block;
+    }
+    ul li {
+      list-style: none;
+      margin: 0;
+      padding: 0.3em 0 0.3em 0;
+      line-height: 1.4em;
+      font-size: 1.2em;
+      font-weight: normal;
+      text-align: center;
+      text-transform: lowercase;
+      &.vjs-selected {
+        background-color: #000;
+      }
+      &:focus, &:hover {
+        background-color: white;
+        background-color: rgba(255, 255, 255, 0.75);
+        color: #111;
+        outline: 0;
+        -webkit-box-shadow: 0 0 1em white;
+        -moz-box-shadow: 0 0 1em white;
+        box-shadow: 0 0 1em white;
+      }
+      &.vjs-selected {
+        &:focus, &:hover {
+          background-color: white;
+          background-color: rgba(255, 255, 255, 0.75);
+          color: #111;
+          outline: 0;
+          -webkit-box-shadow: 0 0 1em white;
+          -moz-box-shadow: 0 0 1em white;
+          box-shadow: 0 0 1em white;
+        }
+      }
+      &.vjs-menu-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1em;
+        line-height: 2em;
+        padding: 0;
+        margin: 0 0 0.3em 0;
+        font-weight: bold;
+        cursor: default;
+      }
+    }
+  }
+  .vjs-subtitles-button:before {
+    content: "\e00c";
+  }
+  .vjs-captions-button {
+    &:before {
+      content: "\e008";
+    }
+    &:focus .vjs-control-content:before, &:hover .vjs-control-content:before {
+      -webkit-box-shadow: 0 0 1em white;
+      -moz-box-shadow: 0 0 1em white;
+      box-shadow: 0 0 1em white;
+    }
+  }
+}
+
+/* Add a gradient to the spinner by overlaying another copy.
+   Text gradient plus a text shadow doesn't work
+   and `background-clip: text` only works in Webkit. */
+/* line 592, ../../vendor/assets/stylesheets/video-js.css */
+
+@-moz-keyframes spin {
+  /* line 606, ../../vendor/assets/stylesheets/video-js.css */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  /* line 607, ../../vendor/assets/stylesheets/video-js.css */
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+
+
+@-webkit-keyframes spin {
+  /* line 610, ../../vendor/assets/stylesheets/video-js.css */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  /* line 611, ../../vendor/assets/stylesheets/video-js.css */
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+
+@-o-keyframes spin {
+  /* line 614, ../../vendor/assets/stylesheets/video-js.css */
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  /* line 615, ../../vendor/assets/stylesheets/video-js.css */
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+
+
+@-ms-keyframes spin {
+  /* line 618, ../../vendor/assets/stylesheets/video-js.css */
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  /* line 619, ../../vendor/assets/stylesheets/video-js.css */
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+
+
+@keyframes spin {
+  /* line 622, ../../vendor/assets/stylesheets/video-js.css */
+  0% {
+    transform: rotate(0deg);
+  }
+  /* line 623, ../../vendor/assets/stylesheets/video-js.css */
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+
+/* Menu Buttons (Captions/Subtitles/etc.)
+-------------------------------------------------------------------------------- */
+/* line 628, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 633, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Button Pop-up Menu */
+/* line 650, ../../vendor/assets/stylesheets/video-js.css */
+
+/*.vjs-default-skin .vjs-menu-button:focus ul,*/
+/* This is not needed because keyboard accessibility for the caption button is not handled with the focus any more. */
+/* line 670, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 673, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 683, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 689, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 699, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Subtitles Button */
+/* line 711, ../../vendor/assets/stylesheets/video-js.css */
+
+/* There's unfortunately no CC button in FontAwesome, so we need
+    to use another font. Please +1 the fontawesome request.
+    https://github.com/FortAwesome/Font-Awesome/issues/968 */
+/* line 716, ../../vendor/assets/stylesheets/video-js.css */
+
+/* Replacement for focus outline */
+/* line 723, ../../vendor/assets/stylesheets/video-js.css */
+
+/* line 1, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+a i {
+  &[class^="icon"], &[class^="halflings"] {
+    width: 24px;
+    padding-right: 10px;
+  }
+}
+
+/* line 6, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.ui-dialog {
+  z-index: 1000 !important;
+  a.close-dialog-link {
+    float: right;
+    i {
+      margin: 0;
+    }
+  }
+  i.icon-remove {
+    padding: 0;
+  }
+}
+
+/* line 9, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+/* line 13, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+/* line 17, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+/* line 21, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.ui-dialog-titlebar {
+  border-radius: 0;
+}
+
+/* line 25, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.clearfix {
+  clear: both;
+}
+
+/* line 29, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.float-lt {
+  float: left;
+}
+
+/* line 33, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.float-rt {
+  float: right;
+}
+
+/* line 37, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.pad-left10 {
+  padding-left: 10px;
+}
+
+/* line 41, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.block {
+  display: block;
+}
+
+/* line 45, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.over-hidden {
+  overflow: hidden;
+}
+
+/* line 49, ../../app/assets/stylesheets/app/bootstrap_custom.css.scss */
+
+.font-size12 {
+  font-size: 12px;
+}
+
+/* line 1, ../../app/assets/stylesheets/app/base.css.scss */
+
+#hidden-elements {
+  display: none;
+}
+
+/* line 5, ../../app/assets/stylesheets/app/base.css.scss */
+
+abbr.timeago {
+  border: 0;
+  cursor: default;
+}
+
+/* line 10, ../../app/assets/stylesheets/app/base.css.scss */
+
+div.loader {
+  background: url("loaders/old/circleBal.gif") center no-repeat;
+  min-height: 30px;
+}
+
+/* line 15, ../../app/assets/stylesheets/app/base.css.scss */
+
+.hidden {
+  display: none;
+}
+
+/* line 18, ../../app/assets/stylesheets/app/base.css.scss */
+
+.taskCursor {
+  cursor: pointer;
+}
+
+/* line 19, ../../app/assets/stylesheets/app/base.css.scss */
+
+.c_container {
+  border-bottom: #AAA;
+  border: 1px solid black;
+  height: 450px;
+  width: 800px;
+  margin: 30px;
+  padding: 5px;
+}
+
+/* line 27, ../../app/assets/stylesheets/app/base.css.scss */
+
+.hide {
+  display: none;
+}
+
+/* line 28, ../../app/assets/stylesheets/app/base.css.scss */
+
+.left {
+  float: left;
+}
+
+/* line 29, ../../app/assets/stylesheets/app/base.css.scss */
+
+.right {
+  float: right;
+}
+
+/* line 31, ../../app/assets/stylesheets/app/base.css.scss */
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 3, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+.comment-container {
+  .info .name a {
+    font-size: 16px;
+  }
+  .comments-box {
+    margin-top: 10px;
+  }
+  .comments-list {
+    margin: 5px 0 0;
+    overflow: hidden;
+    background: #ccc;
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 5px;
+        border-bottom: 1px solid white;
+        overflow: hidden;
+        margin: 0;
+        p {
+          margin: 0;
+          padding-left: 50px;
+          span {
+            padding: 0;
+            display: inline;
+            &.poster {
+              font-size: 14px;
+              font-weight: bold;
+            }
+            &.comment {
+              padding-left: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      abbr.timeago {
+        display: block;
+        padding-left: 50px;
+        font-size: 10px;
+      }
+    }
+  }
+  .comments-form-wrapper {
+    background: #ccc;
+    overflow: hidden;
+    padding: 5px;
+    textarea {
+      margin-left: 10px;
+      margin-left: 10px;
+      width: 232px;
+      height: 40px;
+      padding: 5px;
+      margin-bottom: 0;
+    }
+    button {
+      margin-left: 5px;
+    }
+  }
+}
+
+/* line 8, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 12, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 17, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 22, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 28, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 32, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 37, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 42, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 49, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 57, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 62, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 71, ../../app/assets/stylesheets/app/views/common/_comments.css.scss */
+
+/* line 3, ../../app/assets/stylesheets/app/views/common/dialogs/media/_audio_player.css.scss */
+
+#audio-dialog {
+  > .loader {
+    margin: 50px auto;
+  }
+  .audio-box {
+    margin: 20px 20px 20px 0;
+    padding: 151px 20px 151px 20px;
+    background: #000;
+  }
+  .comment-container {
+    margin: 20px 0;
+  }
+}
+
+/* line 7, ../../app/assets/stylesheets/app/views/common/dialogs/media/_audio_player.css.scss */
+
+/* line 13, ../../app/assets/stylesheets/app/views/common/dialogs/media/_audio_player.css.scss */
+
+/* line 1, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+#drawing-board-wrapper {
+  padding: 5px;
+  background: black;
+  height: 500px;
+  width: 700px;
+  float: left;
+  overflow: scroll;
+  .drawing-board-controls {
+    background: white;
+    left: 0;
+    padding: 5px 0;
+  }
+  .drawing-board {
+    margin: 0 auto;
+  }
+  > .loader {
+    margin-top: 250px;
+  }
+}
+
+/* line 9, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 15, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 19, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 25, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+#graphics-dialog {
+  > .loader {
+    margin: 100px 0;
+  }
+  #revisions-content-wrapper {
+    float: right;
+    width: 330px;
+    height: 500px;
+    padding: 0 10px;
+    background: #edeff4;
+  }
+  #revisions-list-wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 4px solid #cccccc;
+    > {
+      h2 {
+        font-size: 18px!important;
+        text-shadow: 0 1px 0 white;
+      }
+      li {
+        padding: 10px 5px;
+        border-bottom: 1px solid white;
+        overflow: hidden;
+        position: relative;
+        &.current {
+          background: #d9dadf;
+        }
+        &:hover a.show-revision {
+          display: inline-block;
+        }
+        a.show-revision {
+          display: none;
+          float: right;
+          margin-top: 5px;
+          width: 13px;
+          height: 13px;
+          margin-right: 10px;
+          border: 0;
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+    .revision-img {
+      float: left;
+      width: 30px;
+    }
+    .revision-info {
+      float: left;
+      width: 270px;
+      a.view-comments {
+        display: block;
+        font-size: 10px;
+        padding-left: 10px;
+        &:hover {
+          text-decoration: none;
+          color: #428bca;
+        }
+        i {
+          padding-right: 3px;
+        }
+      }
+      .comments-box {
+        width: 270px;
+        margin-top: 10px;
+        border-top: 1px solid #aaaaaa;
+        background: #cccccc;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .comments-list {
+        margin: 5px 0 0;
+        overflow: hidden;
+        background: #ccc;
+        ul {
+          margin: 0;
+          list-style: none;
+          padding: 0;
+          li {
+            padding: 5px;
+            border-bottom: 1px solid white;
+            overflow: hidden;
+            margin: 0;
+            p {
+              margin: 0;
+              span {
+                padding: 0;
+                display: inline;
+                &.poster {
+                  padding-left: 5px;
+                  font-size: 14px;
+                  font-weight: bold;
+                }
+                &.comment {
+                  padding-left: 35px;
+                  display: block;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          abbr.timeago {
+            display: block;
+            padding: 6px 0 0 35px;
+            font-size: 10px;
+          }
+        }
+      }
+      .comment-form {
+        padding: 10px 5px;
+        .comment-textarea {
+          margin: 0px 0px 0px 5px;
+          width: 160px;
+          height: 36px;
+          padding: 5px;
+          display: inline;
+          font-size: 12px;
+        }
+        button.btn.btn-primary {
+          margin-left: 5px;
+        }
+      }
+    }
+    .posted-by {
+      padding-left: 10px;
+      color: #aaa;
+      font-size: 11px;
+    }
+    .poster {
+      padding-left: 5px;
+    }
+  }
+}
+
+/* line 29, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 37, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 43, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 48, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 54, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 60, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 65, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 75, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 80, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 85, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 89, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 94, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 99, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 104, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 110, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 116, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 121, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 126, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 132, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 135, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 140, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 146, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 154, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 162, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 165, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 174, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 181, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 187, ../../app/assets/stylesheets/app/views/common/dialogs/media/_graphic_display.css.scss */
+
+/* line 3, ../../app/assets/stylesheets/app/views/common/dialogs/media/_text_editor.css.scss */
+
+#text-editor-dialog {
+  > .loader {
+    margin: 200px auto;
+  }
+  .box {
+    width: 100%;
+    margin-right: 20px;
+  }
+  .text-info-wrapper {
+    padding-top: 20px;
+  }
+}
+
+/* line 7, ../../app/assets/stylesheets/app/views/common/dialogs/media/_text_editor.css.scss */
+
+/* line 12, ../../app/assets/stylesheets/app/views/common/dialogs/media/_text_editor.css.scss */
+
+/* line 1, ../../app/assets/stylesheets/app/views/common/video_player.css.sass */
+
+#video-dialog {
+  margin-top: 15px;
+  .video-wrapper {
+    width: 660px;
+    height: 360px;
+    float: left;
+    .video-js {
+      background: black;
+    }
+  }
+  .video-info-wrapper {
+    height: 360px;
+    overflow-y: visible;
+  }
+}
+
+/* line 4, ../../app/assets/stylesheets/app/views/common/video_player.css.sass */
+
+/* line 9, ../../app/assets/stylesheets/app/views/common/video_player.css.sass */
+
+/* line 12, ../../app/assets/stylesheets/app/views/common/video_player.css.sass */
+
+/* line 2, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+#videos-wrapper {
+  .row {
+    margin: 0;
+  }
+  ul.nav {
+    float: right;
+    margin-right: 15px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .box-content {
+    padding-left: 20px;
+  }
+  .file-list {
+    margin: 0;
+    list-style: none;
+    padding: 0 0 0 20px;
+    li a {
+      &.media-videos-link, &.media-texts-link, &.media-audios-link {
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+/* line 6, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+/* line 11, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+/* line 15, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+/* line 19, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+/* line 24, ../../app/assets/stylesheets/app/views/jobs/_videos.css.scss */
+
+/* line 3, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+body[data-controller="projects"] {
+  #content {
+    .nav-wrapper {
+      float: left;
+      margin-top: 35px;
+    }
+    .project-status-wrapper {
+      float: right;
+      margin-bottom: 10px;
+    }
+    > .box {
+      clear: both;
+    }
+    .col-lg-10 {
+      width: 100% !important;
+    }
+    #tasks-wrapper {
+      overflow: auto;
+    }
+  }
+  #invite-team {
+    display: block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .popover-close {
+    position: absolute;
+    right: 0;
+  }
+  .search-team-member {
+    #search-input {
+      padding-right: 50px;
+    }
+    .controls {
+      position: relative;
+    }
+    .loader {
+      position: absolute;
+      z-index: 999;
+      width: 20px;
+      height: 20px;
+      right: 16px;
+      top: 2px;
+    }
+  }
+  .popover-content {
+    h3 {
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 5px;
+      font-weight: bold;
+    }
+    ul.profile-list {
+      margin: 0;
+      padding-left: 10px;
+      li {
+        list-style: none;
+      }
+      .add-member-link {
+        display: block;
+        padding: 4px;
+        &:hover {
+          background-color: #318ec4;
+          color: #fff;
+          text-decoration: none;
+        }
+        &.member-already {
+          opacity: 0.8;
+          position: relative;
+          cursor: default;
+        }
+        i.halflings-icon.ok {
+          position: absolute;
+          right: 20px;
+          top: 8px;
+        }
+        span.name {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  #current-project-team-members {
+    clear: both;
+    padding-top: 11px;
+    p {
+      display: inline-block;
+      i.icon-list {
+        padding-right: 10px;
+      }
+    }
+    a.team-members-link {
+      padding: 0 4px;
+      display: inline-block;
+    }
+  }
+}
+
+/* line 8, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 13, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 17, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 21, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 26, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 30, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 35, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 41, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 45, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 49, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 60, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 66, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 70, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 74, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 78, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 84, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 90, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 96, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 104, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 108, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 111, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 116, ../../app/assets/stylesheets/app/views/projects/projects.css.scss */
+
+/* line 1, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+.box.create-list {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #ccc;
+  padding: 15px;
+  &.idle {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+/* line 9, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 12, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 20, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+#new_task_list {
+  .form-group {
+    margin: 0;
+    .controls {
+      padding: 0;
+    }
+  }
+  #btn-create-list {
+    margin-top: 10px;
+  }
+  #btn-cancel-create-list {
+    opacity: 0.8;
+    margin-left: 5px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/* line 23, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 28, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 32, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 36, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 43, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+#task_content {
+  width: 100%;
+  .box {
+    .box-content, .task-wrapper {
+      padding: 0 0 20px 0;
+      overflow: hidden;
+      min-height: 100px;
+    }
+    .tasks {
+      padding: 0 10px 20px;
+      display: block;
+      width: 100%;
+    }
+    .add-new-task-wrapper {
+      display: block;
+      clear: both;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+        background: #eee;
+      }
+      a {
+        padding: 10px;
+        line-height: 40px;
+        color: #333333;
+      }
+    }
+    .new-task-form-wrapper {
+      padding: 0 10px;
+      textarea {
+        width: 100%;
+        height: 50px;
+      }
+      .btn-add-task {
+        margin-top: 8px;
+      }
+    }
+  }
+  .task-col-boxes {
+    float: left;
+    width: 350px;
+    margin: 0 15px;
+  }
+}
+
+/* line 47, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 53, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 59, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 68, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 73, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 80, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 83, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 88, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 94, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 102, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+#edit-task-dialog {
+  .loader {
+    min-height: 200px;
+  }
+  .row {
+    margin-left: -5px;
+  }
+  textarea.task-title {
+    width: 415px;
+  }
+}
+
+/* line 106, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+
+/* line 110, ../../app/assets/stylesheets/app/views/projects/_tasks.css.scss */
+.cke{visibility:hidden;}
+.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}
+.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}

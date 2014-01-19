@@ -1,0 +1,132 @@
+Mongoid::Errors::DocumentNotFound at /assets
+============================================
+
+> 
+Problem:
+  Document not found for class Profile with attributes {:username=>"assets"}.
+Summary:
+  When calling Profile.find_by with a hash of attributes, all attributes provided must match a document in the database or this error will be raised.
+Resolution:
+  Search for attributes that are in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error.
+
+app/controllers/profiles_controller.rb, line 20
+-----------------------------------------------
+
+``` ruby
+   15     end
+   16   
+   17     # GET /profiles/1
+   18     # GET /profiles/1.json
+   19     def show
+>  20       @profile = Profile.find_by(username: params[:username])
+   21       set_current_profile(current_user, @profile) if current_user == @profile.user
+   22   
+   23       respond_to do |format|
+   24         format.html {
+   25           if ((@profile && @profile.viewable?)|| (current_profile = @profile))
+```
+
+App backtrace
+-------------
+
+ - app/controllers/profiles_controller.rb:20:in `show'
+
+Full backtrace
+--------------
+
+ - (gem) mongoid-3.0.22/lib/mongoid/errors/document_not_found.rb:39:in `initialize'
+ - (gem) mongoid-3.0.22/lib/mongoid/finders.rb:96:in `find_by'
+ - app/controllers/profiles_controller.rb:20:in `show'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+ - (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+ - (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__1949011948812027468__process_action__2308831671933709904__callbacks'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+ - (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+ - (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+ - (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+ - (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/rails3/action_controller.rb:34:in `block in process_action'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:268:in `block in perform_action_with_newrelic_trace'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/agent/method_tracer.rb:240:in `trace_execution_scoped'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:263:in `perform_action_with_newrelic_trace'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/rails3/action_controller.rb:33:in `process_action'
+ - (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+ - (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+ - (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+ - (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+ - (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/rack/error_collector.rb:8:in `call'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+ - (gem) newrelic_rpm-3.5.5.38/lib/new_relic/rack/developer_mode.rb:24:in `call'
+ - (gem) mongoid-3.0.22/lib/rack/mongoid/middleware/identity_map.rb:34:in `block in call'
+ - (gem) mongoid-3.0.22/lib/mongoid/unit_of_work.rb:39:in `unit_of_work'
+ - (gem) mongoid-3.0.22/lib/rack/mongoid/middleware/identity_map.rb:34:in `call'
+ - (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+ - (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+ - (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+ - (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+ - (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+ - (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__1836243468554347976__call__281424719688426392__callbacks'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+ - (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+ - (gem) airbrake-3.1.12/lib/airbrake/rails/middleware.rb:13:in `call'
+ - (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+ - (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+ - (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+ - (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+ - (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+ - (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+ - (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+ - (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+ - (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+ - (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+ - (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+ - (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+ - (gem) airbrake-3.1.12/lib/airbrake/user_informer.rb:16:in `_call'
+ - (gem) airbrake-3.1.12/lib/airbrake/user_informer.rb:12:in `call'
+ - (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+ - (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+ - (gem) rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+ - (gem) railties-3.2.12/lib/rails/rack/log_tailer.rb:17:in `call'
+ - (gem) thin-1.5.1/lib/thin/connection.rb:81:in `block in pre_process'
+ - (gem) thin-1.5.1/lib/thin/connection.rb:79:in `pre_process'
+ - (gem) thin-1.5.1/lib/thin/connection.rb:54:in `process'
+ - (gem) thin-1.5.1/lib/thin/connection.rb:39:in `receive_data'
+ - (gem) eventmachine-1.0.3/lib/eventmachine.rb:187:in `run'
+ - (gem) thin-1.5.1/lib/thin/backends/base.rb:63:in `start'
+ - (gem) thin-1.5.1/lib/thin/server.rb:159:in `start'
+ - (gem) rack-1.4.5/lib/rack/handler/thin.rb:13:in `run'
+ - (gem) rack-1.4.5/lib/rack/server.rb:268:in `start'
+ - (gem) railties-3.2.12/lib/rails/commands/server.rb:70:in `start'
+ - (gem) railties-3.2.12/lib/rails/commands.rb:55:in `block in <top (required)>'
+ - (gem) railties-3.2.12/lib/rails/commands.rb:50:in `<top (required)>'
+ - script/rails:6:in `<main>'
+ - script/rails:0:in `<main>'
+
